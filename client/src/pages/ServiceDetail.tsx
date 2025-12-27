@@ -6,8 +6,7 @@ import {
   Dialog, 
   DialogContent, 
   DialogHeader, 
-  DialogTitle, 
-  DialogTrigger 
+  DialogTitle 
 } from "@/components/ui/dialog";
 import { 
   Select, 
@@ -17,6 +16,7 @@ import {
   SelectValue 
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { 
   Star, 
   ShieldCheck, 
@@ -26,7 +26,12 @@ import {
   Info,
   ChevronRight,
   ShoppingCart,
-  Percent
+  Percent,
+  Calendar,
+  UserCheck,
+  Pause,
+  RefreshCw,
+  Zap
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -36,7 +41,6 @@ export default function ServiceDetail() {
   return (
     <Layout>
       <div className="bg-white min-h-screen pb-20">
-        {/* Header / Sub-nav (Similar to Urban Company) */}
         <div className="border-b border-slate-100 bg-white sticky top-16 z-30 py-4 hidden md:block">
           <div className="container mx-auto px-4 flex items-center gap-6">
              <div className="flex items-center gap-2 text-sm font-medium text-slate-500">
@@ -49,8 +53,6 @@ export default function ServiceDetail() {
 
         <div className="container mx-auto px-4 pt-8">
           <div className="grid lg:grid-cols-3 gap-12">
-            
-            {/* Left Content: Service Info & Selection */}
             <div className="lg:col-span-2 space-y-8">
               <div className="space-y-4">
                 <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary">Paquetes de Limpieza Mensual</h1>
@@ -69,7 +71,6 @@ export default function ServiceDetail() {
                 </Button>
               </div>
 
-              {/* Video/Carousel Placeholder (Urban Company style) */}
               <div className="relative aspect-video rounded-3xl overflow-hidden shadow-xl group cursor-pointer bg-slate-900">
                  <img 
                   src="/images/hero-clean.png" 
@@ -81,20 +82,10 @@ export default function ServiceDetail() {
                     <div className="w-0 h-0 border-t-[15px] border-t-transparent border-l-[25px] border-l-white border-b-[15px] border-b-transparent ml-2"></div>
                   </div>
                 </div>
-                <div className="absolute bottom-6 inset-x-0 px-8 flex justify-between items-center text-white">
-                  <div className="flex gap-2">
-                    <div className="w-2 h-2 rounded-full bg-white"></div>
-                    <div className="w-2 h-2 rounded-full bg-white/30"></div>
-                    <div className="w-2 h-2 rounded-full bg-white/30"></div>
-                  </div>
-                  <span className="text-sm font-medium">Todo lo que tu hogar necesita</span>
-                </div>
               </div>
 
-              {/* Choice Section */}
               <div className="pt-12">
                 <h2 className="text-2xl font-heading font-bold text-primary mb-8">Personaliza tu experiencia</h2>
-                
                 <Card className="p-6 border-slate-100 shadow-md hover:shadow-lg transition-shadow">
                   <div className="flex justify-between items-start mb-6">
                     <div className="space-y-1">
@@ -107,54 +98,20 @@ export default function ServiceDetail() {
                         <span className="text-slate-400 line-through text-sm">S/400</span>
                         <span className="text-xl font-bold text-primary">Desde S/320</span>
                       </div>
-                      <p className="text-xs text-slate-500 flex items-center gap-1 mt-1">
-                        <Clock className="w-3 h-3" /> 4 horas por visita
-                      </p>
                     </div>
-                    <Button 
-                      onClick={() => setIsOpen(true)}
-                      variant="outline" 
-                      className="border-primary text-primary hover:bg-primary/5 font-bold"
-                    >
-                      Añadir
-                    </Button>
+                    <Button onClick={() => setIsOpen(true)} variant="outline" className="border-primary text-primary hover:bg-primary/5 font-bold">Añadir</Button>
                   </div>
-                  <Button variant="link" className="p-0 h-auto text-primary font-bold text-xs uppercase tracking-wider">
-                    Ver detalles del plan
-                  </Button>
                 </Card>
               </div>
             </div>
 
-            {/* Right Sidebar: Cart & Promise */}
             <div className="space-y-6">
-              {/* Empty Cart State */}
               <Card className="p-8 text-center space-y-4 border-slate-100 shadow-sm">
-                <div className="mx-auto w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center text-slate-300">
-                  <ShoppingCart className="w-8 h-8" />
-                </div>
+                <div className="mx-auto w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center text-slate-300"><ShoppingCart className="w-8 h-8" /></div>
                 <p className="text-slate-500 font-medium">Tu carrito está vacío</p>
               </Card>
-
-              {/* Offers */}
-              <Card className="p-4 border-slate-100 shadow-sm flex items-center gap-4 bg-green-50/50">
-                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-green-600">
-                  <Percent className="w-5 h-5" />
-                </div>
-                <div className="flex-grow">
-                  <p className="text-sm font-bold text-primary">10% de Descuento Extra</p>
-                  <p className="text-[10px] text-slate-500 uppercase font-bold">CÓDIGO: RESI2025</p>
-                </div>
-              </Card>
-
-              {/* Residenz Promise (Urban Company style) */}
               <Card className="p-6 border-slate-100 shadow-sm space-y-4">
-                <div className="flex justify-between items-center mb-2">
-                  <h3 className="font-heading font-bold text-primary">La Promesa Residenz</h3>
-                  <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <ShieldCheck className="w-6 h-6 text-primary" />
-                  </div>
-                </div>
+                <h3 className="font-heading font-bold text-primary">La Promesa Residenz</h3>
                 <ul className="space-y-3">
                   <PromiseItem text="Profesionales Verificados" />
                   <PromiseItem text="Gestión sin Fricciones" />
@@ -167,118 +124,189 @@ export default function ServiceDetail() {
         </div>
       </div>
 
-      {/* Onboarding Dialog (The Modal from Screenshots) */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-2xl p-0 overflow-hidden rounded-[2rem] gap-0 border-0">
+        <DialogContent className="max-w-2xl p-0 overflow-hidden rounded-[2rem] gap-0 border-0 bg-white">
           <div className="max-h-[90vh] overflow-y-auto">
-            <div className="p-8 pb-4">
-              <DialogHeader className="mb-8">
-                <div className="flex justify-between items-center">
-                  <DialogTitle className="text-2xl font-heading font-bold text-primary">Configura tu Limpieza Mensual</DialogTitle>
+            
+            {/* 1. Header with Top-rated Professionals */}
+            <div className="p-8 border-b border-slate-100 bg-slate-50 relative">
+              <div className="grid grid-cols-2 gap-4 items-center">
+                <div className="space-y-4">
+                  <h2 className="text-3xl font-heading font-bold text-primary leading-tight">Profesionales mejor valorados</h2>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-2 text-sm font-medium text-slate-700">
+                      <ShieldCheck className="w-5 h-5 text-primary" />
+                      100% Personal Verificado
+                    </li>
+                    <li className="flex items-center gap-2 text-sm font-medium text-slate-700">
+                      <Star className="w-5 h-5 text-secondary fill-secondary" />
+                      Calificación promedio 4.8+
+                    </li>
+                    <li className="flex items-center gap-2 text-sm font-medium text-slate-700">
+                      <Zap className="w-5 h-5 text-primary" />
+                      100+ Horas de Entrenamiento
+                    </li>
+                  </ul>
                 </div>
-                <div className="flex items-center gap-2 mt-1">
-                  <Star className="w-4 h-4 text-secondary fill-current" />
-                  <span className="text-sm font-bold text-primary">4.84 (73K reseñas)</span>
-                  <span className="text-slate-400 text-sm">| Desde S/320/servicio</span>
+                <div className="relative">
+                  <img src="/images/staff-maria.png" alt="Staff" className="w-full h-auto rounded-2xl shadow-xl" />
                 </div>
-              </DialogHeader>
-
-              <div className="space-y-10">
-                {/* Step 1: Duration */}
-                <section className="space-y-4">
-                  <h4 className="text-lg font-bold text-primary flex items-center justify-between">
-                    Selecciona Requerimientos
-                    <Info className="w-4 h-4 text-slate-400" />
-                  </h4>
-                  
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold text-slate-500 uppercase">Duración por visita*</label>
-                    <Select defaultValue="4">
-                      <SelectTrigger className="h-12 border-slate-200 rounded-xl">
-                        <SelectValue placeholder="Selecciona duración" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="4">4 horas</SelectItem>
-                        <SelectItem value="6">6 horas</SelectItem>
-                        <SelectItem value="8">8 horas (Día completo)</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div className="space-y-2 pt-4">
-                    <label className="text-xs font-bold text-slate-500 uppercase">Número de profesionales</label>
-                    <Select defaultValue="1">
-                      <SelectTrigger className="h-12 border-slate-200 rounded-xl">
-                        <SelectValue placeholder="Selecciona personal" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="1">1 Profesional (La misma siempre)</SelectItem>
-                        <SelectItem value="2">2 Profesionales (Equipo fijo)</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </section>
-
-                {/* Step 2: Frequency */}
-                <section className="space-y-4">
-                  <h4 className="text-lg font-bold text-primary uppercase tracking-tight">Frecuencia Semanal</h4>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    <FrequencyOption label="1 vez" sub="S/320/mes" active />
-                    <FrequencyOption label="2 veces" sub="S/600/mes" />
-                    <FrequencyOption label="3 veces" sub="S/850/mes" />
-                    <FrequencyOption label="6 veces" sub="S/1600/mes" />
-                  </div>
-                </section>
-
-                {/* Step 3: Plan Duration */}
-                <section className="space-y-4">
-                  <h4 className="text-lg font-bold text-primary uppercase tracking-tight">Duración del Plan</h4>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <PlanDurationOption label="4 semanas" price="S/320" discount="10% off" active />
-                    <PlanDurationOption label="12 semanas" price="S/860" discount="20% off" />
-                    <PlanDurationOption label="24 semanas" price="S/1600" discount="30% off" />
-                  </div>
-                </section>
-
-                {/* Why Residenz Comparison Table (Inspired by Yammak) */}
-                <section className="pt-8 border-t border-slate-100">
-                  <h4 className="text-2xl font-heading font-bold text-primary text-center mb-10 italic underline decoration-secondary decoration-4 underline-offset-8">¿Por qué elegir Residenz?</h4>
-                  
-                  <div className="rounded-3xl overflow-hidden border border-slate-100 shadow-sm">
-                    <div className="grid grid-cols-3 bg-slate-50 py-4 text-center">
-                       <div></div>
-                       <div className="flex flex-col items-center">
-                          <div className="bg-primary text-white p-1.5 rounded-lg mb-2">
-                             <ShieldCheck className="w-5 h-5" />
-                          </div>
-                          <span className="text-xs font-bold text-primary">Residenz</span>
-                       </div>
-                       <div className="flex flex-col items-center justify-center opacity-40">
-                          <span className="text-xs font-bold text-slate-500">Otros</span>
-                       </div>
-                    </div>
-
-                    <ComparisonRow label="Personal Fijo siempre" resi={true} others={false} />
-                    <ComparisonRow label="Garantía de S/15,000" resi={true} others={false} />
-                    <ComparisonRow label="100+ horas de entrenamiento" resi={true} others={false} />
-                    <ComparisonRow label="Insumos Profesionales" resi={true} others={false} />
-                    <ComparisonRow label="Cancelación Flexible" resi={true} others={false} />
-                  </div>
-                </section>
               </div>
             </div>
 
-            {/* Footer Modal Action */}
+            <div className="p-8 space-y-12">
+              {/* 2. How it works Timeline */}
+              <section className="space-y-6">
+                <h3 className="text-2xl font-heading font-bold text-primary">Cómo funciona:</h3>
+                <div className="space-y-8 relative before:absolute before:left-4 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-100">
+                  <TimelineStep number="1" title="Selecciona la Duración" desc="Elige la duración de cada visita según el tamaño de tu casa y carga de trabajo." />
+                  <TimelineStep number="2" title="Selecciona Número de Profesionales" desc="Elige el número de personas basado en tus necesidades." />
+                  <TimelineStep number="3" title="Selecciona Días por Semana" desc="Elige de 1 a 6 veces por semana. ¡Más días = más ahorros!" />
+                  <TimelineStep number="4" title="Selecciona Duración del Plan" desc="Elige desde 4 semanas hasta 24 semanas." />
+                  <TimelineStep number="5" title="Selecciona Combinación de Día y Hora" desc="Selecciona tu horario preferido y enviaremos a la misma persona siempre." />
+                  <TimelineStep number="6" title="Completa el Pago" desc="Paga de forma segura usando cualquiera de las opciones disponibles." />
+                </div>
+                
+                <div className="bg-primary/5 border border-primary/10 p-6 rounded-2xl flex items-center gap-4">
+                  <div className="bg-primary text-white p-2 rounded-lg"><Check className="w-6 h-6" /></div>
+                  <div>
+                    <p className="font-bold text-primary">¡Reserva Completada!</p>
+                    <p className="text-sm text-slate-600">¡Tu reserva está lista! Disfruta la conveniencia de tener a la misma persona siempre.</p>
+                  </div>
+                </div>
+              </section>
+
+              {/* 3. Cleaning Materials / Tools */}
+              <section className="space-y-6">
+                <h3 className="text-2xl font-heading font-bold text-primary">Nuestros materiales de limpieza</h3>
+                <div className="grid gap-6">
+                  <MaterialItem title="Máquina de Vapor" desc="Elimina manchas de grasa de estufas, filtros de campana, azulejos y hornos microondas." image="/images/hero-clean.png" />
+                  <MaterialItem title="Máquina de Fregado" desc="Elimina manchas difíciles de agua de azulejos de baño, lechada, bañeras, lavabos y grifos." image="/images/hero-clean.png" />
+                  <MaterialItem title="Desengrasante" desc="Descompone aceites, grasas y manchas pesadas de electrodomésticos de cocina, pisos y paredes." image="/images/hero-clean.png" />
+                  <MaterialItem title="Desincrustante" desc="Ayuda a eliminar depósitos minerales y sarro de los baños." image="/images/hero-clean.png" />
+                </div>
+              </section>
+
+              {/* 4. Subscription Benefits Grid */}
+              <section className="space-y-6">
+                <h3 className="text-2xl font-heading font-bold text-primary">Beneficios de la suscripción</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <BenefitCard icon={UserCheck} title="Misma persona siempre" desc="Misma 'Resi' en cada visita para tu total tranquilidad." />
+                  <BenefitCard icon={RefreshCw} title="Reprograma Gratis" desc="Cambia o cancela servicios sin cargos adicionales." />
+                  <BenefitCard icon={Pause} title="Pausa cuando quieras" desc="Pausa tu plan o salta visitas sin costo cuando estés fuera." />
+                  <BenefitCard icon={Calendar} title="Disponible Viernes" desc="Incluso los días de mayor demanda están a tu disposición." />
+                </div>
+              </section>
+
+              {/* 5. Flexibility Section */}
+              <section className="space-y-6 bg-slate-50 p-8 rounded-3xl">
+                <h3 className="text-2xl font-heading font-bold text-primary">Flexibilidad total. Sin cargos extra.</h3>
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="p-1 bg-primary/10 rounded-md mt-1"><RefreshCw className="w-4 h-4 text-primary" /></div>
+                      <div>
+                        <p className="font-bold text-primary">Cambia de profesional</p>
+                        <p className="text-sm text-slate-600">Cambia de 'Resi' en cualquier momento si no estás satisfecho.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="p-1 bg-primary/10 rounded-md mt-1"><Pause className="w-4 h-4 text-primary" /></div>
+                      <div>
+                        <p className="font-bold text-primary">Pausa tu suscripción</p>
+                        <p className="text-sm text-slate-600">Gratis cuando estés fuera de casa por viaje o vacaciones.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <img src="/images/staff-maria.png" alt="App Preview" className="rounded-2xl shadow-lg border-4 border-white" />
+                </div>
+              </section>
+
+              {/* 6. Subscription Policy (Scrollable Text) */}
+              <section className="space-y-4 text-slate-600 text-sm">
+                <h3 className="text-xl font-heading font-bold text-primary">Política de Suscripción</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="font-bold text-primary mb-1">Renovación y pagos</p>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>Una vez suscrito, tu plan se renovará automáticamente cada mes a menos que se cancele.</li>
+                      <li>El pago se deducirá mensualmente, excluyendo descuentos de primera reserva.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="font-bold text-primary mb-1">Saltar o reprogramar gratis</p>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>Si no necesitas el servicio, el servicio saltado se añadirá al final de tu periodo de suscripción.</li>
+                      <li>Reprogramar no garantiza la misma persona para el servicio movido.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="font-bold text-primary mb-1">Cancelación de suscripción</p>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>Cancela tu suscripción y obtén un reembolso total por los servicios no utilizados restantes.</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              {/* 7. FAQs */}
+              <section className="space-y-6">
+                <h3 className="text-3xl font-heading font-bold text-primary">FAQs</h3>
+                <Accordion type="single" collapsible className="w-full space-y-4">
+                  <FAQItem value="item-1" q="¿Cuál es la nacionalidad del personal?" a="Nuestro personal es 100% local, cuidadosamente seleccionado, con calificación 4.8+ y más de 100 horas de entrenamiento." />
+                  <FAQItem value="item-2" q="¿Cómo puedo reservar a mi profesional preferido?" a="El sistema asignará automáticamente a la persona que atendió tu primera visita para todos los servicios futuros sin cargos extra." />
+                  <FAQItem value="item-3" q="¿Cómo puedo cambiar de profesional?" a="En caso de insatisfacción, puedes cambiar fácilmente desde tu cuenta en la sección 'Mi Plan'." />
+                  <FAQItem value="item-4" q="¿Cuál es la cobertura del seguro?" a="Nuestros servicios están totalmente asegurados con una póliza de hasta S/15,000 por daños causados durante el servicio." />
+                  <FAQItem value="item-5" q="¿Qué pasa si no estoy disponible algunos días?" a="Puedes reprogramar o cancelar fácilmente. Para viajes largos, puedes pausar tu plan y reservaremos a tu 'Resi' hasta tu regreso." />
+                </Accordion>
+              </section>
+
+              {/* 8. Rating Distribution & Reviews */}
+              <section className="space-y-8 pt-8 border-t border-slate-100">
+                <div className="flex items-center gap-6">
+                  <div className="text-5xl font-heading font-bold text-primary flex items-center gap-2">
+                    <Star className="w-8 h-8 fill-secondary text-secondary" />
+                    4.85
+                  </div>
+                  <div className="flex-grow space-y-1.5">
+                    <RatingBar stars={5} count="650K" percent={90} />
+                    <RatingBar stars={4} count="20K" percent={5} />
+                    <RatingBar stars={3} count="10K" percent={3} />
+                    <RatingBar stars={2} count="4K" percent={1} />
+                    <RatingBar stars={1} count="8K" percent={1} />
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="flex justify-between items-center">
+                    <h4 className="text-xl font-heading font-bold text-primary">Todas las reseñas</h4>
+                    <Button variant="link" className="text-primary font-bold">Filtrar</Button>
+                  </div>
+                  <div className="flex gap-2">
+                    <Badge variant="secondary" className="bg-primary/10 text-primary">Más detalladas</Badge>
+                    <Badge variant="outline" className="text-slate-500">En mi área</Badge>
+                    <Badge variant="outline" className="text-slate-500">Usuarios frecuentes</Badge>
+                  </div>
+
+                  <div className="space-y-8 mt-8">
+                    <ReviewItem name="Qadija" date="Dic 21, 2025" text="Cuando Delia entra en mi casa puedo relajarme porque es muy honesta en su trabajo. Es la mejor trabajadora que he conocido, eficiente y muy limpia." />
+                    <ReviewItem name="Nouf" date="Dic 21, 2025" text="Rose y Sandra son las mejores! No hace falta repetir dos veces, recuerdan todas mis preferencias, haciendo el trabajo muy rápido y perfectamente." />
+                    <ReviewItem name="Ameen Daniels" date="Dic 21, 2025" text="Lourdes es un absoluto encanto. Su limpieza es consistentemente profunda, organizada y profesional." />
+                  </div>
+                </div>
+              </section>
+            </div>
+
             <div className="sticky bottom-0 bg-white border-t border-slate-100 p-6 flex items-center justify-between">
               <div className="space-y-0.5">
                 <div className="flex items-center gap-2">
                   <span className="text-xl font-bold text-primary">S/320</span>
                   <span className="text-slate-400 line-through text-sm">S/400</span>
                 </div>
-                <p className="text-[10px] text-green-600 font-bold uppercase">Ahorras S/80 este mes</p>
+                <p className="text-[10px] text-green-600 font-bold">4 servicios incluidos</p>
               </div>
-              <Button size="lg" className="rounded-xl px-12 h-14 bg-primary font-bold text-lg shadow-xl shadow-primary/20">
-                Confirmar Plan
+              <Button size="lg" className="rounded-xl px-12 h-14 bg-primary font-bold text-lg shadow-xl shadow-primary/20" onClick={() => setIsOpen(false)}>
+                Listo
               </Button>
             </div>
           </div>
@@ -297,62 +325,78 @@ function PromiseItem({ text }: { text: string }) {
   );
 }
 
-function FrequencyOption({ label, sub, active }: { label: string, sub: string, active?: boolean }) {
+function TimelineStep({ number, title, desc }: { number: string, title: string, desc: string }) {
   return (
-    <div className={cn(
-      "p-3 rounded-xl border text-center cursor-pointer transition-all",
-      active 
-        ? "border-primary bg-primary/5 ring-1 ring-primary shadow-sm" 
-        : "border-slate-100 bg-white hover:border-slate-300"
-    )}>
-      <div className={cn("text-sm font-bold", active ? "text-primary" : "text-slate-600")}>{label}</div>
-      <div className="text-[10px] text-slate-400 font-medium">{sub}</div>
-    </div>
-  );
-}
-
-function PlanDurationOption({ label, price, discount, active }: { label: string, price: string, discount: string, active?: boolean }) {
-  return (
-    <div className={cn(
-      "p-4 rounded-2xl border cursor-pointer transition-all relative",
-      active 
-        ? "border-primary bg-primary/5 ring-1 ring-primary shadow-md" 
-        : "border-slate-100 bg-white hover:border-slate-300"
-    )}>
-      <div className="flex justify-between items-start mb-2">
-        <span className={cn("text-xs font-bold", active ? "text-primary" : "text-slate-500")}>{label}</span>
-        <Badge variant="outline" className="text-[9px] h-4 px-1 bg-green-50 border-green-200 text-green-700 font-bold uppercase">{discount}</Badge>
+    <div className="flex gap-6 relative">
+      <div className="w-9 h-9 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold shrink-0 z-10">{number}</div>
+      <div className="space-y-1">
+        <h4 className="font-bold text-primary">{title}</h4>
+        <p className="text-sm text-slate-500 leading-relaxed">{desc}</p>
       </div>
-      <div className={cn("text-lg font-bold", active ? "text-primary" : "text-slate-700")}>{price}</div>
-      <div className="text-[9px] text-slate-400 font-medium">Costo por servicio</div>
     </div>
   );
 }
 
-function ComparisonRow({ label, resi, others }: { label: string, resi: boolean, others: boolean }) {
+function MaterialItem({ title, desc, image }: { title: string, desc: string, image: string }) {
   return (
-    <div className="grid grid-cols-3 py-4 border-t border-slate-50 items-center">
-       <div className="pl-6 text-xs font-bold text-slate-600">{label}</div>
-       <div className="flex justify-center">
-          {resi ? (
-            <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center">
-               <Check className="w-4 h-4" />
-            </div>
-          ) : (
-            <X className="w-5 h-5 text-slate-200" />
-          )}
-       </div>
-       <div className="flex justify-center">
-          {others ? (
-             <div className="w-6 h-6 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center">
-                <Check className="w-4 h-4" />
-             </div>
-          ) : (
-            <div className="w-6 h-6 bg-slate-50 rounded-full flex items-center justify-center border border-slate-100">
-               <X className="w-4 h-4 text-slate-300" />
-            </div>
-          )}
-       </div>
+    <div className="flex gap-6 items-center group">
+      <div className="w-32 h-32 rounded-2xl overflow-hidden shrink-0 border border-slate-100">
+        <img src={image} className="w-full h-full object-cover group-hover:scale-110 transition-transform" alt={title} />
+      </div>
+      <div className="space-y-1">
+        <h4 className="font-bold text-primary">{title}</h4>
+        <p className="text-sm text-slate-600 leading-relaxed">{desc}</p>
+      </div>
+    </div>
+  );
+}
+
+function BenefitCard({ icon: Icon, title, desc }: { icon: any, title: string, desc: string }) {
+  return (
+    <div className="p-5 rounded-2xl bg-white border border-slate-100 shadow-sm space-y-3">
+      <div className="w-10 h-10 bg-primary/5 rounded-xl flex items-center justify-center text-primary"><Icon className="w-5 h-5" /></div>
+      <div className="space-y-1">
+        <h4 className="text-sm font-bold text-primary leading-tight">{title}</h4>
+        <p className="text-[11px] text-slate-500 leading-relaxed">{desc}</p>
+      </div>
+    </div>
+  );
+}
+
+function FAQItem({ q, a, value }: { q: string, a: string, value: string }) {
+  return (
+    <AccordionItem value={value} className="border border-slate-100 rounded-2xl px-6 bg-white shadow-sm overflow-hidden">
+      <AccordionTrigger className="text-left font-bold text-primary hover:no-underline py-4">{q}</AccordionTrigger>
+      <AccordionContent className="text-slate-600 leading-relaxed pb-4">{a}</AccordionContent>
+    </AccordionItem>
+  );
+}
+
+function RatingBar({ stars, count, percent }: { stars: number, count: string, percent: number }) {
+  return (
+    <div className="flex items-center gap-3 text-xs font-medium">
+      <div className="flex items-center gap-1 w-6 text-slate-400"><span>{stars}</span><Star className="w-3 h-3 fill-current" /></div>
+      <div className="flex-grow h-1.5 bg-slate-100 rounded-full overflow-hidden">
+        <div className="h-full bg-slate-900 rounded-full" style={{ width: `${percent}%` }}></div>
+      </div>
+      <div className="w-10 text-slate-400 text-right">{count}</div>
+    </div>
+  );
+}
+
+function ReviewItem({ name, date, text }: { name: string, date: string, text: string }) {
+  return (
+    <div className="space-y-3 border-b border-slate-100 pb-8 last:border-0">
+      <div className="flex justify-between items-start">
+        <div className="space-y-1">
+          <h4 className="font-bold text-primary">{name}</h4>
+          <p className="text-xs text-slate-400">{date} • Por 1 profesional</p>
+        </div>
+        <div className="flex items-center gap-1 bg-green-600 text-white px-1.5 py-0.5 rounded text-[10px] font-bold">
+          <span>5</span> <Star className="w-2.5 h-2.5 fill-current" />
+        </div>
+      </div>
+      <p className="text-sm text-slate-600 leading-relaxed italic">"{text}"</p>
     </div>
   );
 }
