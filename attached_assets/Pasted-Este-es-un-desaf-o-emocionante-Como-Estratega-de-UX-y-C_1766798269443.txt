@@ -1,0 +1,150 @@
+Este es un desafío emocionante. Como Estratega de UX y CRO de Residenz, mi análisis rápido es el siguiente:
+
+* **Hadas.pe:** Se siente anticuado, como un directorio de clasificados. Su enfoque es funcional pero carece de conexión emocional o sensación de "marca premium". La confianza se basa solo en "filtros psicológicos", lo cual es el estándar mínimo hoy en día. **Nuestra oportunidad:** Superarlos masivamente en diseño, modernidad y la promesa de una experiencia "hotelera" superior.
+* **Loop Limpieza:** Es más moderno, limpio y tiene una vibra de startup tecnológica. Es un buen competidor en "on-demand". Sin embargo, su comunicación sigue siendo muy transaccional ("reserva una cita"). **Nuestra oportunidad:** Igualar su modernidad visual, pero diferenciarnos radicalmente al no vender "citas", sino "suscripciones de tranquilidad" y una garantía institucional (el seguro de S/15k) que ellos no destacan.
+
+A continuación, presento el **Prompt Maestro** diseñado para ser copiado y pegado en herramientas como V0.dev, Lovable u otra IA generativa de UI avanzada. Este prompt contiene la estructura, el contenido redactado y las directrices de diseño para crear un sitio web corporativo multipágina que posicione a Residenz por encima de la competencia.
+
+---
+
+### PROMPT MAESTRO PARA V0 / LOVABLE (Copiar desde aquí)
+
+**ROL:** Eres un Diseñador UI/UX Senior y Desarrollador Front-End especializado en crear sitios web corporativos de alto rendimiento para startups de servicios premium (SaaS/B2C).
+
+**OBJETIVO DEL PROYECTO:**
+Crear el sitio web corporativo multipágina para "Residenz".
+Residenz NO es otro marketplace de limpieza (como Hadas.pe) ni solo una app de citas (como Loop). Somos una **Empresa de Gestión Hotelera para el Hogar**. Ofrecemos un modelo de suscripción con personal fijo, hubs locales para respuesta rápida y, lo más importante, una garantía institucional respaldada por un seguro de S/15,000.
+
+El sitio debe transmitir una confianza radical, ser visualmente premium (piense en un hotel boutique mezclado con una Fintech moderna) y estar optimizado para convertir visitantes en suscriptores. Debe verse mucho más profesional y establecido que la competencia mencionada.
+
+**ESTÉTICA Y BRANDING:**
+
+* **Vibra:** Premium, confiable, corporativa pero cálida, ordenada, "peace of mind".
+* **Paleta de Colores (Sugerida):** Azul marino profundo (confianza, corporativo), blanco limpio (limpieza), acentos en dorado mate o beige (premium/hotelero).
+* **Tipografía:** Una fuente Sans Serif moderna y limpia para titulares (ej. Inter, Montserrat) y una muy legible para cuerpos.
+* **Imágenes:** NO usar fotos de stock genéricas de gente sonriendo con trapeadores. Las imágenes deben ser de estilo editorial, mostrando hogares reales impecables, detalles de "calidad hotelera" (toallas dobladas perfectas, grifería brillante) y personal uniformado que se vea profesional y seguro.
+
+**ARQUITECTURA DEL SITIO (PÁGINAS A GENERAR):**
+
+1. Homepage (Página de Inicio / Landing de Conversión)
+2. Sobre Nosotros (La Empresa, El Modelo de Hubs, La Seguridad)
+3. Planes y Servicios (Enfoque en Suscripción)
+4. Contacto / Soporte
+
+---
+
+#### DETALLE DE PÁGINA 1: HOMEPAGE (Inicio)
+
+**1. Header / Navegación:**
+
+* Logo de "Residenz" a la izquierda (texto moderno + icono sutil de un escudo/casa).
+* Menú: Inicio, Cómo Funciona, Planes, Sobre Nosotros.
+* Botón CTA Principal (Destacado): "Agendar Prueba Blindada".
+
+**2. Hero Section (Arriba del pliegue - CRÍTICO):**
+
+* **Imagen de Fondo:** Una fotografía de alta calidad, luminosa, de una sala de estar moderna e impecablemente limpia. Una profesional de Residenz, uniformada (polo azul marino, pantalón cargo, se ve muy profesional), está terminando un detalle (ej. colocando un cojín perfectamente). Transmite paz.
+* **Titular (H1):** TU HOGAR EN PILOTO AUTOMÁTICO, CON ESTÁNDAR DE HOTEL 5 ESTRELLAS.
+* **Subtítulo (H2):** Olvídate de la rotación y la informalidad. Personal de confianza fijo, asegurado (cobertura S/15k) y entrenado para que nunca repitas una instrucción.
+* **CTA Principal:** [Botón Grande] QUIERO MI PRIMERA VISITA BLINDADA.
+* **Subtexto del CTA:** Prueba de fuego desde S/49. Satisfacción garantizada.
+* **Barra de Confianza (Debajo del CTA):** Iconos pequeños con texto: ✅ Personal Verificado con Antecedentes | 🛡️ Seguro de Responsabilidad Civil Incluido | 🏨 Protocolo Hotelero.
+
+**3. Sección "El Problema vs. La Solución" (Contraste Visual):**
+
+* Diseño de dos columnas claras.
+* **Columna Izq (Título: "La Ruleta Rusa Actual"):** Lista con iconos rojos de 'X'. Textos: "Personal rota sin aviso", "Tienes que explicar dónde está todo cada vez", "Si rompen algo, tú asumes el costo", "Calidad impredecible".
+* **Columna Der (Título: "La Experiencia Residenz"):** Lista con iconos verdes de 'check'. Textos: "Siempre la misma 'Resi' asignada", "Manual Digital: Ya saben tus preferencias", "Garantía Institucional: Si fallamos, pagamos (hasta S/15k)", "Estándar Hotelero garantizado (aroma, orden visual)".
+
+**4. Sección "Nuestro Diferencial: La Garantía Institucional" (Foco en el Miedo):**
+
+* **Imagen:** Un primer plano conceptual de un certificado de garantía físico o digital con un escudo azul brillante, sostenido por manos seguras.
+* **Titular:** NO ES SOLO LIMPIEZA. ES TU ESCUDO LEGAL Y FINANCIERO.
+* **Cuerpo:** A diferencia de las plataformas informales, Residenz es una empresa que asume la responsabilidad. Cada visita incluye una póliza de protección contra accidentes laborales y daños a tu propiedad. Tú descansas, nosotros respondemos.
+
+**5. Sección "Cómo Funciona" (Simple en 3 pasos):**
+
+* Tres bloques con iconos grandes y modernos.
+* **Paso 1:** (Icono de formulario) "Configura tu Hogar". Define tus preferencias y zonas clave una sola vez en nuestro Manual Digital.
+* **Paso 2:** (Icono de video/perfil) "Conoce a tu Equipo". Recibe el perfil y video de presentación de tu Resi fija asignada antes de que llegue.
+* **Paso 3:** (Icono de sofá limpio) "Piloto Automático". Llegan puntuales, ejecutan el protocolo hotelero y se van. Tú solo disfrutas.
+
+**6. Footer Corporativo:**
+
+* Enlaces a páginas internas, redes sociales sutiles.
+* Texto de Copyright: "© 2024 Residenz Home Management S.A.C. Todos los derechos reservados."
+
+---
+
+#### DETALLE DE PÁGINA 2: SOBRE NOSOTROS (Trust Building)
+
+*Esta página debe gritar "Empresa Seria", no "App de garaje".*
+
+**1. Hero Simple:**
+
+* Titular: Más que una App. Somos la infraestructura de confianza para tu hogar.
+
+**2. Sección "Nuestra Filosofía: El Modelo de Hubs":**
+
+* Explicar visualmente (quizás con un pequeño diagrama) que no son freelancers dispersos.
+* **Texto:** Operamos mediante Hubs Locales en cada distrito. Esto nos permite tener supervisión directa, garantizar llegadas rápidas y mantener un estándar de calidad consistente que un modelo de marketplace no puede ofrecer.
+
+**3. Sección "El Proceso de Veting Más Estricto del Mercado":**
+
+* Mostrar que es difícil entrar a trabajar en Residenz.
+* **Puntos:** Verificación de antecedentes penales y judiciales (doble check), Entrevistas psicológicas presenciales, Capacitación en hospitalidad y protocolos de seguridad. Solo el 5% de postulantes se convierte en una "Resi".
+
+---
+
+#### DETALLE DE PÁGINA 3: PLANES Y SERVICIOS
+
+*El objetivo es vender la suscripción, no la visita única.*
+
+**1. Titular:** Elige tu nivel de tranquilidad.
+
+**2. Tabla de Precios (Diseño de 3 columnas, destacando la central):**
+
+* **Columna 1: "On-Demand" (Visita Única)**
+* Precio: Desde S/ 85 / visita.
+* Para: Emergencias o pruebas puntuales.
+* Incluye: Limpieza estándar, Seguro básico.
+* No incluye: Personal fijo, Manual Digital de preferencias.
+* CTA: Agendar Una Vez.
+
+
+* **Columna 2: "SUSCRIPCIÓN: PILOTO AUTOMÁTICO" (Destacada, más grande, color de acento)**
+* Badge: "Más Popular" / "Recomendado".
+* Precio: Desde S/ 320 / mes (ejemplo para 4 visitas).
+* Para: Mantenimiento constante y paz mental total.
+* **Incluye (Checkmarks destacados):**
+* ✅ Misma Resi Fija siempre.
+* ✅ Garantía Total (Cobertura S/15k).
+* ✅ Manual Digital de Preferencias (No repites instrucciones).
+* ✅ Acceso a servicios Express de 30 min.
+
+
+* CTA: Empezar Suscripción (Prueba el primer mes con garantía).
+
+
+* **Columna 3: "Empresas / Airbnb"**
+* Texto: Soluciones a medida para gestores de propiedades y oficinas.
+* CTA: Cotizar.
+
+
+
+---
+
+#### DETALLE DE PÁGINA 4: CONTACTO
+
+**1. Diseño limpio:** Formulario de contacto para dudas generales y un número de WhatsApp Business visible para atención rápida.
+**2. Dirección de Oficina:** (Aunque sea virtual al inicio, poner una dirección fiscal en una zona corporativa como San Isidro/Miraflores ayuda a la percepción de empresa establecida).
+**3. Mensaje de refuerzo:** "¿Dudas sobre nuestra garantía o procesos? Habla con un humano de nuestro equipo de Hub."
+
+---
+
+**INSTRUCCIONES FINALES PARA LA IA:**
+
+* Asegura que el sitio sea totalmente responsive (móvil primero).
+* Las interacciones (hovers en botones) deben sentirse premium.
+* Utiliza espacios en blanco generosos para dar sensación de lujo y orden.
+* Genera imágenes placeholder que cumplan con las descripciones "editoriales" y "no de stock" que he detallado.

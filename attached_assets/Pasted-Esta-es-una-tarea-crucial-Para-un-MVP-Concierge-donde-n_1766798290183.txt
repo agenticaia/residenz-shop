@@ -1,0 +1,155 @@
+Esta es una tarea crucial. Para un MVP "Concierge" donde no hay tecnología real que mostrar, **las imágenes y la estructura de la Landing Page son tu único producto**. Deben transmitir una confianza radical y un estándar "hotelero" para justificar el precio y el modelo de suscripción.
+
+Aquí tienes el paquete completo de recursos visuales para tu Landing Page de validación.
+
+---
+
+### PARTE 1: PROMPTS PARA GENERACIÓN DE IMÁGENES (IA)
+
+Necesitas imágenes que no parezcan "stock photo" genérica. Deben sentirse auténticas, cálidas y, sobre todo, **profesionales y seguras**. Usa estos prompts en herramientas como Midjourney v6, DALL-E 3 o Adobe Firefly.
+
+#### IMAGEN 1: El "Hero Shot" (La Promesa Visual)
+
+*Objetivo:* Transmitir paz mental, profesionalismo y el estándar hotelero en un solo vistazo. Esta es la imagen principal de la cabecera.
+
+> **Prompt:** A professional photograph of a friendly, trustworthy female cleaning specialist in her 30s. She is wearing a neat, branded navy blue polo shirt uniform and comfortable work trousers. She is smiling warmly, holding a perfectly organized cleaning caddy. She stands in a bright, modern, sunlit living room that is impeccably clean and minimalist. A perfectly folded throw blanket is on the sofa. The atmosphere is calm, safe, and high-end. Natural light. 4k resolution. —ar 16:9
+
+#### IMAGEN 2: El Detalle "Wow" (Estándar Hotelero)
+
+*Objetivo:* Mostrar tangencialmente la diferencia de calidad. No muestres a alguien fregando un inodoro; muestra el resultado final de "hotel".
+
+> **Prompt:** A close-up photograph of hotel-style amenities in a residential bathroom. On a sparkling clean marble countertop, there are fluffy white towels folded perfectly in a roll, next to a small, elegant glass bottle of artisanal room spray with a "Residenz" label. The faucet is gleaming chrome. The focus is sharp on the towels and spray. It feels luxurious and ordered. —ar 4:3
+
+#### IMAGEN 3: La Visualización de la "Confianza" (Garantía/Seguro)
+
+*Objetivo:* Hacer tangible el concepto abstracto del "Seguro de S/15,000" o la "Trust Wallet" sin mostrar una app.
+
+> **Prompt:** A conceptual photograph showing a person's hands gently holding a high-quality, printed certificate or tablet screen. On the certificate, there is a prominent blue shield icon and bold text that reads "GARANTÍA TOTAL RESIDENZ - PROTECCIÓN S/15,000". The background is a softly blurred, comfortable family living room, implying safety and peace of mind. Trustworthy colors, blue and white. —ar 3:2
+
+#### IMAGEN 4: La Humanización (El "Video-Match" Estático)
+
+*Objetivo:* Combatir el miedo a los extraños. Mostrar que el personal es "gente como uno", verificada y amable.
+
+> **Prompt:** A warm, approachable portrait photograph of a Residenz cleaning staff member named "María". She is looking directly at the camera with a genuine, friendly smile. She wears her uniform and a visible photo ID badge clipped to her shirt. She is standing outdoors in a nice, safe residential neighborhood with green trees in the background. It looks like a professional profile photo, not a mugshot. Sunlight, natural. —ar 1:1
+
+---
+
+### PARTE 2: WIREFRAMES DE LA LANDING PAGE (Estructura MVP)
+
+Para el MVP, la landing page debe ser **una sola página (One-Pager)** diseñada para una sola acción: que el usuario haga clic en el botón para iniciar el proceso manual (WhatsApp o Typeform).
+
+**Estructura Lógica:**
+
+1. **Gancho Emocional (Hero)**
+2. **El Problema (Agitación)**
+3. **La Solución (Beneficios y Garantía)**
+4. **Cómo Funciona (Simplicidad)**
+5. **Prueba Social y Cierre**
+
+A continuación, los wireframes en baja fidelidad.
+
+#### SECCIÓN 1: HERO (Arriba del pliegue)
+
+*El objetivo es detener el scroll y comunicar la propuesta de valor única inmediatamente.*
+
+```
++-------------------------------------------------------------------+
+| [Logo Residenz]                                   [Botón: Empezar]|
++-------------------------------------------------------------------+
+|                                                                   |
+|        TU HOGAR EN PILOTO AUTOMÁTICO,                             |
+|        CON ESTÁNDAR DE HOTEL 5 ESTRELLAS.                         |
+|                                                                   |
+|  (H2) Personal de confianza fijo, asegurado (S/15k cobertura)     |
+|       y entrenado para que nunca repitas una instrucción.         |
+|                                                                   |
+|            [ BOTÓN CTA: QUIERO MI PRIMERA VISITA BLINDADA ]       |
+|             (Subtexto: Prueba de fuego por solo S/49)             |
+|                                                                   |
+|  [ IMAGEN 1: HERO SHOT DE LA RESI UNIFORMADA EN SALA IMPECABLE ]  |
+|                                                                   |
++-------------------------------------------------------------------+
+|   ✅ Personal Verificado   ✅ Seguro Incluido   ✅ Sin Contratos  |
++-------------------------------------------------------------------+
+
+```
+
+#### SECCIÓN 2: EL PROBLEMA VS. LA SOLUCIÓN
+
+*Contrastar la informalidad actual con la propuesta de Residenz.*
+
+```
++-------------------------------------------------------------------+
+|                                                                   |
+|            ¿CANSADO DE LA RULETA RUSA DE LA LIMPIEZA?             |
+|                                                                   |
+|  [COLUMNA IZQ: LO NORMAL]          [COLUMNA DER: RESIDENZ]        |
+|                                                                   |
+|  ❌ Personal rota sin aviso.       ✅ Siempre la misma "Resi".    |
+|  ❌ "Enséñame dónde está todo".    ✅ Manual Digital: Sabe todo.  |
+|  ❌ Si rompen algo, tú pagas.      ✅ Si rompemos, pagamos (S/15k)|
+|  ❌ Calidad impredecible.          ✅ Estándar Hotelero garantizado|
+|                                                                   |
+|            [ IMAGEN 2: EL DETALLE WOW (TOALLAS DOBLADAS) ]        |
+|                                                                   |
++-------------------------------------------------------------------+
+
+```
+
+#### SECCIÓN 3: EL ANCLA DE CONFIANZA (La Garantía)
+
+*Esta es la sección más importante para el MVP. Vende la seguridad, no la limpieza.*
+
+```
++-------------------------------------------------------------------+
+|                                                                   |
+|        NO ES SOLO LIMPIEZA. ES TU ESCUDO DE TRANQUILIDAD.         |
+|                                                                   |
+|  [ IMAGEN 3: VISUALIZACIÓN DEL CERTIFICADO/ESCUDO DE GARANTÍA ]   |
+|                                                                   |
+|  (H3) Incluimos un Certificado de Protección en cada visita.      |
+|  Olvídate de la responsabilidad civil o laboral. Nosotros         |
+|  asumimos el riesgo por ti. Si tu Resi se accidenta o algo se     |
+|  daña, nuestra póliza responde en 24 horas.                       |
+|                                                                   |
+|          [ BOTÓN CTA: VER LOS TÉRMINOS DE LA GARANTÍA ]           |
+|                                                                   |
++-------------------------------------------------------------------+
+
+```
+
+#### SECCIÓN 4: CÓMO FUNCIONA (Concierge) & PRUEBA SOCIAL
+
+*Hacer que el proceso parezca simple y probado.*
+
+```
++-------------------------------------------------------------------+
+|                                                                   |
+|                    TU HOGAR IMPECABLE EN 3 PASOS                  |
+|                                                                   |
+|  [ICONO 1] Pide tu prueba.      [ICONO 2] Conoce a tu Resi.       |
+|  Llena tus preferencias         Te enviamos su perfil y video     |
+|  una sola vez.                  antes de que llegue.              |
+|                                                                   |
+|  [ICONO 3] Piloto Automático.                                     |
+|  Llega, limpia como hotel y se va. Tú solo disfrutas.             |
+|                                                                   |
+|-------------------------------------------------------------------|
+|                        LO QUE DICEN NUESTROS SOCIOS               |
+|                                                                   |
+|  [FOTO PERFIL 1] "Lo que me convenció fue el seguro. Saber que    |
+|  si pasa algo, ellos responden, me da paz." - Brian C., Surco.    |
+|                                                                   |
+|  [FOTO PERFIL 2] "Odiaba repetir instrucciones. Ahora llegan y    |
+|  saben exactamente qué hacer. Es magia." - Janina S., Miraflores. |
+|                                                                   |
+|-------------------------------------------------------------------|
+|                                                                   |
+|           ¿LISTO PARA DEJAR DE PREOCUPARTE POR TU HOGAR?          |
+|                                                                   |
+|       [ BOTÓN CTA GIGANTE: AGENDAR MI PRUEBA CON GARANTÍA ]       |
+|              (Garantía de satisfacción o devolvemos tu dinero)    |
+|                                                                   |
++-------------------------------------------------------------------+
+
+```
