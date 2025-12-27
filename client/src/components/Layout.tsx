@@ -10,6 +10,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   const navItems = [
     { label: "Inicio", href: "/" },
+    { label: "Servicios", href: "/services" },
     { label: "Sobre Nosotros", href: "/about" },
     { label: "Planes", href: "/plans" },
     { label: "Contacto", href: "/contact" },
@@ -40,9 +41,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </a>
               </Link>
             ))}
-            <Link href="/plans">
-              <Button size="sm" variant="ghost" className="font-medium text-primary hover:bg-primary/5 hover:text-primary">
-                Iniciar Sesión
+            <Link href="/service-detail">
+              <Button size="sm" className="font-bold bg-primary hover:bg-primary/90 rounded-full px-6">
+                Empezar
               </Button>
             </Link>
           </nav>
@@ -70,6 +71,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   </a>
                 </Link>
               ))}
+              <Link href="/service-detail">
+                <Button className="w-full bg-primary font-bold rounded-xl h-12">Empezar Ahora</Button>
+              </Link>
             </nav>
           </div>
         )}
@@ -95,9 +99,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h4 className="font-heading font-semibold mb-4 text-secondary">Compañía</h4>
               <ul className="space-y-2 text-sm text-slate-400">
+                <li><Link href="/services"><a className="hover:text-white transition-colors">Servicios</a></Link></li>
                 <li><Link href="/about"><a className="hover:text-white transition-colors">Sobre Nosotros</a></Link></li>
                 <li><Link href="/plans"><a className="hover:text-white transition-colors">Planes y Precios</a></Link></li>
-                <li><Link href="/contact"><a className="hover:text-white transition-colors">Carreras (Únete)</a></Link></li>
               </ul>
             </div>
 
@@ -105,27 +109,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <h4 className="font-heading font-semibold mb-4 text-secondary">Legal</h4>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li><a href="#" className="hover:text-white transition-colors">Términos de Servicio</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Política de Privacidad</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Garantía de S/15k</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-heading font-semibold mb-4 text-secondary">Contacto</h4>
-              <ul className="space-y-2 text-sm text-slate-400">
-                <li>hola@residenz.pe</li>
-                <li>+51 999 999 999</li>
-                <li>San Isidro, Lima - Perú</li>
-              </ul>
+              <h4 className="font-heading font-semibold mb-4 text-secondary">Atención</h4>
+              <Link href="/service-detail">
+                <Button size="sm" className="bg-secondary text-primary hover:bg-secondary/90 font-bold rounded-full w-full">
+                  Agendar Prueba
+                </Button>
+              </Link>
             </div>
           </div>
           
           <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
             <p>&copy; 2025 Residenz Home Management S.A.C.</p>
-            <div className="flex gap-4 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white">Instagram</a>
-              <a href="#" className="hover:text-white">LinkedIn</a>
-            </div>
           </div>
         </div>
       </footer>

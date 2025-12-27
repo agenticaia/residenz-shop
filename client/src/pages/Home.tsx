@@ -13,7 +13,7 @@ import {
   Coffee 
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { Link } from "wouter";
 
 export default function HomePage() {
   return (
@@ -45,10 +45,12 @@ export default function HomePage() {
             </p>
             
             <div className="flex flex-col items-center gap-4">
-              <Button size="lg" className="h-16 px-10 text-xl font-bold bg-primary hover:bg-primary/90 shadow-2xl shadow-primary/40 rounded-full group">
-                QUIERO MI PRIMERA VISITA BLINDADA
-                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <Link href="/service-detail">
+                <Button size="lg" className="h-16 px-10 text-xl font-bold bg-primary hover:bg-primary/90 shadow-2xl shadow-primary/40 rounded-full group">
+                  QUIERO MI PRIMERA VISITA BLINDADA
+                  <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
               <p className="text-secondary font-medium tracking-wide">
                 Prueba de fuego por solo S/49
               </p>
@@ -98,6 +100,13 @@ export default function HomePage() {
                 <ProblemItem text="Si rompen algo, tú asumes el costo." />
                 <ProblemItem text="Calidad impredecible y artesanal." />
               </ul>
+              <div className="mt-12">
+                <Link href="/service-detail">
+                  <Button variant="outline" className="w-full h-14 border-primary text-primary hover:bg-primary/5 font-bold rounded-xl">
+                    Quiero mi primera visita blindada
+                  </Button>
+                </Link>
+              </div>
             </div>
 
             {/* Columna Derecha: Residenz */}
@@ -115,6 +124,13 @@ export default function HomePage() {
                 <SolutionItem text="Si fallamos, pagamos (hasta S/15k)." />
                 <SolutionItem text="Estándar Hotelero garantizado." />
               </ul>
+              <div className="mt-12">
+                <Link href="/service-detail">
+                  <Button className="w-full h-14 bg-secondary text-primary hover:bg-secondary/90 font-bold rounded-xl">
+                    Agendar con Garantía
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -161,9 +177,11 @@ export default function HomePage() {
               <p className="text-lg text-slate-300 font-light leading-relaxed">
                 Olvídate de la responsabilidad civil o laboral. Nosotros asumimos el riesgo por ti. Si tu Resi se accidenta o algo se daña, nuestra póliza responde en 24 horas.
               </p>
-              <Button variant="outline" className="text-secondary border-secondary hover:bg-secondary/10 px-8 h-12 rounded-full font-bold uppercase tracking-wider text-xs">
-                VER LOS TÉRMINOS DE LA GARANTÍA
-              </Button>
+              <Link href="/service-detail">
+                <Button className="bg-secondary text-primary hover:bg-secondary/90 px-8 h-12 rounded-full font-bold uppercase tracking-wider text-xs">
+                  Quiero mi primera visita blindada
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -225,9 +243,11 @@ export default function HomePage() {
               ¿LISTO PARA DEJAR DE PREOCUPARTE POR TU HOGAR?
             </h2>
             <div className="space-y-4">
-              <Button size="lg" className="h-20 px-12 text-2xl font-bold bg-primary hover:bg-primary/90 shadow-2xl rounded-2xl w-full md:w-auto uppercase italic tracking-tighter">
-                AGENDAR MI PRUEBA CON GARANTÍA
-              </Button>
+              <Link href="/service-detail">
+                <Button size="lg" className="h-20 px-12 text-2xl font-bold bg-primary hover:bg-primary/90 shadow-2xl rounded-2xl w-full md:w-auto uppercase italic tracking-tighter">
+                  AGENDAR MI PRUEBA CON GARANTÍA
+                </Button>
+              </Link>
               <p className="text-slate-500 font-medium">
                 Garantía de satisfacción o devolvemos tu dinero
               </p>

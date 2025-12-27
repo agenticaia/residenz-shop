@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, ShieldCheck, UserCheck, Zap, Briefcase } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link } from "wouter";
 
 export default function Plans() {
   return (
@@ -41,9 +42,11 @@ export default function Plans() {
                 <PlanFeature text="Manual Digital de Preferencias" negative />
               </div>
 
-              <Button variant="outline" className="w-full border-slate-300">
-                Agendar Una Vez
-              </Button>
+              <Link href="/service-detail">
+                <Button variant="outline" className="w-full border-slate-300">
+                  Agendar Una Vez
+                </Button>
+              </Link>
             </Card>
 
             {/* Subscription - Highlighted */}
@@ -70,9 +73,11 @@ export default function Plans() {
                 <PlanFeature text="Reemplazo inmediato por baja" />
               </div>
 
-              <Button className="w-full bg-primary hover:bg-primary/90 h-12 text-lg">
-                Empezar Suscripción
-              </Button>
+              <Link href="/service-detail">
+                <Button className="w-full bg-primary hover:bg-primary/90 h-12 text-lg font-bold">
+                  Quiero mi primera visita blindada
+                </Button>
+              </Link>
               <p className="text-center text-xs text-slate-400 mt-4">Garantía de satisfacción el primer mes</p>
             </Card>
 
@@ -98,9 +103,11 @@ export default function Plans() {
                 <PlanFeature text="Protocolos personalizados" />
               </div>
 
-              <Button variant="outline" className="w-full border-slate-300">
-                Contactar Ventas
-              </Button>
+              <Link href="/service-detail">
+                <Button variant="outline" className="w-full border-slate-300">
+                  Contactar Ventas
+                </Button>
+              </Link>
             </Card>
           </div>
         </div>
