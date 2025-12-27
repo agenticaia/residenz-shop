@@ -42,6 +42,7 @@ export default function ServiceDetail() {
   const [duration, setDuration] = useState("4");
   const [cleaners, setCleaners] = useState("1");
   const [frequency, setFrequency] = useState("1");
+  const [planDuration, setPlanDuration] = useState("4");
 
   const handleAddClick = () => {
     setIsOpen(true);
@@ -53,9 +54,16 @@ export default function ServiceDetail() {
   };
 
   const calculatePrice = () => {
-    const base = 320;
-    const factor = parseInt(duration) / 4 * parseInt(cleaners);
-    return base * factor * quantity;
+    const basePrices: Record<string, number> = {
+      "1": 136,
+      "2": 135,
+      "3": 133,
+      "6": 131
+    };
+    
+    const pricePerService = basePrices[frequency] || 136;
+    const totalServices = parseInt(planDuration);
+    return pricePerService * totalServices * quantity;
   };
 
   const calculateOldPrice = () => {
@@ -271,66 +279,167 @@ export default function ServiceDetail() {
               </DialogHeader>
 
               <div className="space-y-12">
-                 {/* Duration & Cleaners */}
-                 <section className="space-y-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-1 h-6 bg-secondary rounded-full"></div>
-                    <h4 className="text-lg font-bold text-primary uppercase tracking-tight">Duración y Personal</h4>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-5">
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-bold text-slate-400 uppercase ml-1">Horas por visita</label>
-                      <Select value={duration} onValueChange={setDuration}>
-                        <SelectTrigger className="h-14 border-slate-100 bg-slate-50/50 rounded-2xl font-semibold focus:ring-primary/20">
-                          <SelectValue placeholder="Duración" />
-                        </SelectTrigger>
-                        <SelectContent className="rounded-2xl border-slate-100">
-                          <SelectItem value="4" className="rounded-xl">4 horas (Recomendado)</SelectItem>
-                          <SelectItem value="6" className="rounded-xl">6 horas (Completo)</SelectItem>
-                          <SelectItem value="8" className="rounded-xl">8 horas (Profundo)</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-bold text-slate-400 uppercase ml-1">Número de Profesionales</label>
-                      <Select value={cleaners} onValueChange={setCleaners}>
-                        <SelectTrigger className="h-14 border-slate-100 bg-slate-50/50 rounded-2xl font-semibold focus:ring-primary/20">
-                          <SelectValue placeholder="Personal" />
-                        </SelectTrigger>
-                        <SelectContent className="rounded-2xl border-slate-100">
-                          <SelectItem value="1" className="rounded-xl">1 Profesional</SelectItem>
-                          <SelectItem value="2" className="rounded-xl">2 Profesionales</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Frequency */}
+                {/* Select Duration of Visit */}
                 <section className="space-y-5">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="w-1 h-6 bg-secondary rounded-full"></div>
-                    <h4 className="text-lg font-bold text-primary uppercase tracking-tight">Frecuencia Semanal</h4>
+                    <h4 className="text-xl font-heading font-bold text-primary">Duration of Cleaning Visit:</h4>
                   </div>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <FrequencyOption label="1 vez" sub="Semanal" active={frequency === "1"} onClick={() => setFrequency("1")} />
-                    <FrequencyOption label="2 veces" sub="Semanal" active={frequency === "2"} onClick={() => setFrequency("2")} />
-                    <FrequencyOption label="3 veces" sub="Semanal" active={frequency === "3"} onClick={() => setFrequency("3")} />
-                    <FrequencyOption label="6 veces" sub="Semanal" active={frequency === "6"} onClick={() => setFrequency("6")} />
+                  <div className="space-y-4">
+                    <div 
+                      onClick={() => setDuration("2")}
+                      className={cn(
+                        "p-6 rounded-2xl border-2 cursor-pointer transition-all",
+                        duration === "2" ? "border-primary bg-primary/5 shadow-md" : "border-slate-100 hover:border-slate-200"
+                      )}
+                    >
+                      <h5 className="font-bold text-lg text-primary">2 hours</h5>
+                      <p className="text-sm text-slate-500 mt-1">Ideal for small apartments and specific tasks</p>
+                    </div>
+                    <div 
+                      onClick={() => setDuration("4")}
+                      className={cn(
+                        "p-6 rounded-2xl border-2 cursor-pointer transition-all",
+                        duration === "4" ? "border-primary bg-primary/5 shadow-md" : "border-slate-100 hover:border-slate-200"
+                      )}
+                    >
+                      <h5 className="font-bold text-lg text-primary">4 hours</h5>
+                      <p className="text-sm text-slate-500 mt-1">Ideal for large apartments, townhouses, or villas</p>
+                    </div>
                   </div>
                 </section>
 
-                {/* Why Residenz */}
-                <section className="space-y-6">
-                   <div className="flex items-center justify-between mb-2">
-                     <h4 className="text-lg font-bold text-primary uppercase tracking-tight">El Estándar Residenz</h4>
-                     <Badge className="bg-secondary text-primary font-bold">Garantía S/15k</Badge>
+                {/* Select Number of Cleaners */}
+                <section className="space-y-5">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                    <h4 className="text-lg font-bold text-primary">Select number of cleaners</h4>
+                    <ChevronRight className="w-5 h-5 text-slate-400 rotate-90" />
+                  </div>
+                  <p className="text-sm text-slate-600">1 cleaner</p>
+                </section>
+
+                {/* Select days per week */}
+                <section className="space-y-5">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                    <h4 className="text-lg font-bold text-primary">Select days per week</h4>
+                    <ChevronRight className="w-5 h-5 text-slate-400 -rotate-90" />
+                  </div>
+                  <div className="flex gap-4 overflow-x-auto pb-4 custom-scrollbar">
+                    <FrequencyOption 
+                      label="Once every week" 
+                      sub="S/136/service" 
+                      active={frequency === "1"} 
+                      onClick={() => setFrequency("1")} 
+                    />
+                    <FrequencyOption 
+                      label="2 times a week" 
+                      sub="S/135/service" 
+                      active={frequency === "2"} 
+                      onClick={() => setFrequency("2")} 
+                    />
+                    <FrequencyOption 
+                      label="3 times a week" 
+                      sub="S/133/service" 
+                      active={frequency === "3"} 
+                      onClick={() => setFrequency("3")} 
+                    />
+                    <FrequencyOption 
+                      label="6 times a week" 
+                      sub="S/131/service" 
+                      active={frequency === "6"} 
+                      onClick={() => setFrequency("6")} 
+                    />
+                  </div>
+                </section>
+
+                {/* Select duration of plan */}
+                <section className="space-y-5">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                    <h4 className="text-lg font-bold text-primary">Select duration of plan</h4>
+                    <ChevronRight className="w-5 h-5 text-slate-400 rotate-90" />
+                  </div>
+                  <div className="flex gap-4 overflow-x-auto pb-4 custom-scrollbar">
+                    <PlanOption 
+                      label="4 weeks" 
+                      price={`S/${136 * 4}`}
+                      sub="(S/136/service)"
+                      discount="20% off"
+                      active={planDuration === "4"} 
+                      onClick={() => setPlanDuration("4")} 
+                    />
+                    <PlanOption 
+                      label="12 weeks" 
+                      price={`S/${136 * 12}`}
+                      sub="(S/136/service)"
+                      discount="20% off"
+                      active={planDuration === "12"} 
+                      onClick={() => setPlanDuration("12")} 
+                    />
+                    <PlanOption 
+                      label="24 weeks" 
+                      price={`S/${136 * 24}`}
+                      sub="(S/136/service)"
+                      discount="20% off"
+                      active={planDuration === "24"} 
+                      onClick={() => setPlanDuration("24")} 
+                    />
+                  </div>
+                </section>
+
+                {/* Why choose Residenz */}
+                <section className="space-y-10 pt-8 border-t border-slate-100">
+                   <div className="text-center">
+                     <h4 className="text-3xl font-heading font-bold text-primary">Why choose Residenz</h4>
                    </div>
-                   <div className="rounded-[2rem] overflow-hidden border border-slate-50 shadow-sm bg-slate-50/20">
-                     <ComparisonRow label="Personal Fijo asignado" resi={true} others={false} />
-                     <ComparisonRow label="Manual Digital de Preferencias" resi={true} others={false} />
-                     <ComparisonRow label="Seguro de Responsabilidad" resi={true} others={false} />
-                     <ComparisonRow label="Entrenamiento Hotelero Real" resi={true} others={false} />
+                   
+                   <div className="relative">
+                     {/* Comparison Table */}
+                     <div className="grid grid-cols-3 mb-8 items-end">
+                       <div className="col-span-1"></div>
+                       <div className="flex flex-col items-center gap-2">
+                         <div className="bg-primary text-white p-2 rounded-xl">
+                           <ShieldCheck className="w-8 h-8" />
+                         </div>
+                         <span className="font-bold text-primary">Residenz</span>
+                       </div>
+                       <div className="flex flex-col items-center gap-2 pb-2">
+                         <span className="font-bold text-slate-400">Others</span>
+                       </div>
+                     </div>
+
+                     <div className="space-y-0 rounded-[2rem] overflow-hidden border border-slate-50">
+                       <ComparisonRow label="2-hour cleaning" resi={true} others="Minimum 4 hour booking" />
+                       <ComparisonRow label="Same cleaner always" resi={true} others={false} />
+                       <ComparisonRow label="Trained professionals" resi="100+ hours of extensive training" others={false} />
+                       <ComparisonRow label="Deep cleaning tools" resi={true} others={false} />
+                       <ComparisonRow label="Free skip, pause, reschedule & cancellation" resi={true} others={false} />
+                     </div>
+                   </div>
+
+                   {/* Testimonial/Hero Section inside modal */}
+                   <div className="bg-slate-50 rounded-[2.5rem] p-8 mt-12 overflow-hidden relative">
+                     <div className="relative z-10 space-y-4 max-w-[60%]">
+                       <h5 className="text-2xl font-bold text-primary leading-tight">Top-rated professional cleaners</h5>
+                       <div className="space-y-2">
+                         <div className="flex items-center gap-2 text-sm text-slate-600 font-medium">
+                           <ShieldCheck className="w-4 h-4 text-primary" />
+                           <span>100% Verified professionals</span>
+                         </div>
+                         <div className="flex items-center gap-2 text-sm text-slate-600 font-medium">
+                           <Star className="w-4 h-4 text-primary fill-primary" />
+                           <span>Average 4.8+ ratings</span>
+                         </div>
+                         <div className="flex items-center gap-2 text-sm text-slate-600 font-medium">
+                           <Zap className="w-4 h-4 text-primary" />
+                           <span>Trained for 100+ Hours</span>
+                         </div>
+                       </div>
+                     </div>
+                     <img 
+                       src="/images/staff-maria.png" 
+                       className="absolute bottom-0 right-0 h-full w-auto object-contain object-bottom grayscale-[0.2] hover:grayscale-0 transition-all duration-500"
+                       alt="Staff"
+                     />
                    </div>
                 </section>
               </div>
@@ -378,38 +487,77 @@ function FrequencyOption({ label, sub, active, onClick }: { label: string, sub: 
     <div 
       onClick={onClick}
       className={cn(
-        "p-4 rounded-2xl border-2 text-center cursor-pointer transition-all duration-300 transform",
+        "p-4 rounded-2xl border-2 text-center cursor-pointer transition-all duration-300 min-w-[140px] flex-shrink-0",
         active 
-          ? "border-primary bg-primary/[0.03] ring-4 ring-primary/5 scale-105 shadow-lg" 
-          : "border-slate-50 bg-white hover:border-slate-200 hover:scale-[1.02]"
+          ? "border-primary bg-primary/[0.03] ring-2 ring-primary/10 shadow-md" 
+          : "border-slate-100 bg-white hover:border-slate-200"
       )}
     >
-      <div className={cn("text-base font-bold transition-colors", active ? "text-primary" : "text-slate-600")}>{label}</div>
-      <div className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter mt-1">{sub}</div>
+      <div className={cn("text-sm font-bold whitespace-nowrap", active ? "text-primary" : "text-slate-600")}>{label}</div>
+      <div className="text-[10px] text-slate-400 font-bold mt-1 whitespace-nowrap">{sub}</div>
     </div>
   );
 }
 
-function ComparisonRow({ label, resi, others }: { label: string, resi: boolean, others: boolean }) {
+function PlanOption({ label, price, sub, discount, active, onClick }: { label: string, price: string, sub: string, discount: string, active: boolean, onClick: () => void }) {
   return (
-    <div className="grid grid-cols-3 py-4 border-t border-slate-50 items-center bg-white/50 first:border-t-0">
-       <div className="pl-8 text-[11px] font-bold text-slate-600 leading-tight pr-4">{label}</div>
-       <div className="flex justify-center">
-          {resi ? (
-            <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/20">
-               <Check className="w-3.5 h-3.5 stroke-[3px]" />
-            </div>
+    <div 
+      onClick={onClick}
+      className={cn(
+        "p-4 rounded-2xl border-2 cursor-pointer transition-all duration-300 min-w-[160px] flex-shrink-0",
+        active 
+          ? "border-primary bg-primary/[0.03] ring-2 ring-primary/10 shadow-md" 
+          : "border-slate-100 bg-white hover:border-slate-200"
+      )}
+    >
+      <div className={cn("text-sm font-bold", active ? "text-primary" : "text-slate-600")}>{label}</div>
+      <div className="text-base font-bold text-primary mt-1">{price}</div>
+      <div className="text-[10px] text-slate-400 font-medium">{sub}</div>
+      <div className="text-[10px] text-green-600 font-bold uppercase mt-1">{discount}</div>
+    </div>
+  );
+}
+
+function ComparisonRow({ label, resi, others }: { label: string, resi: boolean | string, others: boolean | string }) {
+  return (
+    <div className="grid grid-cols-3 py-6 border-t border-slate-50 items-center bg-white first:border-t-0">
+       <div className="pl-8 text-sm font-bold text-slate-700 leading-tight pr-4">{label}</div>
+       <div className="flex flex-col items-center px-4">
+          {typeof resi === "boolean" ? (
+            resi ? (
+              <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/20">
+                 <Check className="w-5 h-5 stroke-[3px]" />
+              </div>
+            ) : (
+              <X className="w-6 h-6 text-slate-200" />
+            )
           ) : (
-            <X className="w-4 h-4 text-slate-200" />
+            <div className="flex flex-col items-center text-center gap-1">
+               <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mb-1">
+                 <Check className="w-5 h-5 stroke-[3px]" />
+               </div>
+               <span className="text-[10px] font-medium text-slate-500">{resi}</span>
+            </div>
           )}
        </div>
-       <div className="flex justify-center">
-          {others ? (
-             <div className="w-6 h-6 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center">
-                <Check className="w-3.5 h-3.5" />
-             </div>
+       <div className="flex flex-col items-center px-4">
+          {typeof others === "boolean" ? (
+             others ? (
+               <div className="w-8 h-8 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center">
+                  <Check className="w-5 h-5" />
+               </div>
+             ) : (
+               <div className="w-8 h-8 bg-slate-100 text-slate-300 rounded-full flex items-center justify-center">
+                  <X className="w-5 h-5" />
+               </div>
+             )
           ) : (
-            <X className="w-5 h-5 text-slate-200" />
+            <div className="flex flex-col items-center text-center">
+               <div className="w-8 h-8 bg-slate-100 text-slate-300 rounded-full flex items-center justify-center mb-1">
+                  <X className="w-5 h-5" />
+               </div>
+               <span className="text-[10px] font-medium text-slate-400 leading-tight">{others}</span>
+            </div>
           )}
        </div>
     </div>
