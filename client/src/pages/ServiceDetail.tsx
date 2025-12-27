@@ -26,7 +26,8 @@ import {
   Percent,
   Minus,
   Plus,
-  ArrowRight
+  ArrowRight,
+  Zap
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLocation } from "wouter";
