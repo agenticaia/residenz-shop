@@ -40,6 +40,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { detailsData, serviceOptions, ServiceConfig, calculateServicePrice } from "@/data/serviceData";
 import { CategorySidebar } from "@/components/service-detail/CategorySidebar";
+import { getAssetUrl } from "@/lib/utils";
 
 type FlowType = 'house' | 'room' | 'mini';
 
@@ -217,7 +218,7 @@ export default function ServiceDetailImproved() {
                           "Limpieza de habitaciones, sala, baño, cocina, balcón, porche y terraza.",
                           "Fregado de pisos con máquina y desempolvado de paredes y techos."
                       ]}
-                      imageUrl="/images/modern-house.png"
+                      imageUrl={getAssetUrl("/images/modern-house.png")}
                       onAdd={() => handleAddClick('house')}
                       onViewDetails={() => handleViewDetails('furnished-house')}
                     />
@@ -233,7 +234,7 @@ export default function ServiceDetailImproved() {
                           "Limpieza profunda de pisos, baños y cocina vacía.",
                           "Ideal para mudanzas en casas grandes."
                       ]}
-                      imageUrl="/images/modern-house.png"
+                      imageUrl={getAssetUrl("/images/modern-house.png")}
                       onAdd={() => handleAddClick('house')}
                       onViewDetails={() => handleViewDetails('unfurnished-house')}
                     />
@@ -254,7 +255,7 @@ export default function ServiceDetailImproved() {
                           "Limpieza profunda de una habitación y armarios.",
                           "Excluye baño adjunto (se cobra aparte)."
                       ]}
-                      imageUrl="/images/bedroom-clean.png"
+                      imageUrl={getAssetUrl("/images/bedroom-clean.png")}
                       onAdd={() => handleAddClick('room')}
                       onViewDetails={() => handleViewDetails('room-cleaning')}
                     />
@@ -268,7 +269,7 @@ export default function ServiceDetailImproved() {
                           "Limpieza profunda de gabinetes, electrodomésticos y superficies.",
                           "Desengrase completo."
                       ]}
-                      imageUrl="/images/modern-house.png"
+                      imageUrl={getAssetUrl("/images/modern-house.png")}
                       onAdd={() => handleAddClick('room')}
                       onViewDetails={() => handleViewDetails('kitchen-cleaning')}
                     />
@@ -282,7 +283,7 @@ export default function ServiceDetailImproved() {
                           "Limpieza profunda de sala, muebles y alfombras superficialmente.",
                           "Aspirado y desinfección."
                       ]}
-                      imageUrl="/images/sofa-cleaning.png"
+                      imageUrl={getAssetUrl("/images/sofa-cleaning.png")}
                       onAdd={() => handleAddClick('room')}
                       onViewDetails={() => handleViewDetails('living-cleaning')}
                     />
@@ -296,7 +297,7 @@ export default function ServiceDetailImproved() {
                           "Limpieza y desinfección de inodoro, lavabo, ducha y espejos.",
                           "Eliminación de sarro y moho."
                       ]}
-                      imageUrl="/images/bedroom-clean.png"
+                      imageUrl={getAssetUrl("/images/bedroom-clean.png")}
                       onAdd={() => handleAddClick('room')}
                       onViewDetails={() => handleViewDetails('bath-cleaning')}
                     />
@@ -310,7 +311,7 @@ export default function ServiceDetailImproved() {
                           "Barrido y fregado de pisos.",
                           "Limpieza de barandas y vidrios accesibles."
                       ]}
-                      imageUrl="/images/apartment-view.png"
+                      imageUrl={getAssetUrl("/images/apartment-view.png")}
                       onAdd={() => handleAddClick('room')}
                       onViewDetails={() => handleViewDetails('balcony-cleaning')}
                     />

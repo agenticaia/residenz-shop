@@ -21,6 +21,7 @@ export default defineConfig({
       plugins: [],
     },
   },
+  base: "/residenz-shop/",
   root: path.resolve(import.meta.dirname, "client"),
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),

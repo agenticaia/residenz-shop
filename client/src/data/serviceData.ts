@@ -1,3 +1,5 @@
+import { getAssetUrl } from "@/lib/utils";
+
 export interface IncludedItem {
   name: string;
   quantity: number;
@@ -86,16 +88,16 @@ export const detailsData: Record<string, {
     price: 180,
     duration: "3 hrs 45 mins",
     included: [
-        { title: "Lavado de pisos de habitaciones", icon: "/images/bedroom-clean.png" },
-        { title: "Limpieza exterior de gabinetes y muebles", icon: "/images/sofa-cleaning.png" },
-        { title: "Limpieza de techos y ventiladores", icon: "/images/hero-clean.png" },
-        { title: "Aspirado de sofá y colchones", icon: "/images/sofa-cleaning.png" },
-        { title: "Puertas, ventanas y espejos", icon: "/images/apartment-view.png" },
-        { title: "Interruptores y accesorios", icon: "/images/modern-house.png" },
+        { title: "Lavado de pisos de habitaciones", icon: getAssetUrl("/images/bedroom-clean.png") },
+        { title: "Limpieza exterior de gabinetes y muebles", icon: getAssetUrl("/images/sofa-cleaning.png") },
+        { title: "Limpieza de techos y ventiladores", icon: getAssetUrl("/images/hero-clean.png") },
+        { title: "Aspirado de sofá y colchones", icon: getAssetUrl("/images/sofa-cleaning.png") },
+        { title: "Puertas, ventanas y espejos", icon: getAssetUrl("/images/apartment-view.png") },
+        { title: "Interruptores y accesorios", icon: getAssetUrl("/images/modern-house.png") },
     ],
     difference: [
-        { before: "/images/bedroom-clean.png", after: "/images/hero-clean.png" },
-        { before: "/images/sofa-cleaning.png", after: "/images/modern-house.png" }
+        { before: getAssetUrl("/images/bedroom-clean.png"), after: getAssetUrl("/images/hero-clean.png") },
+        { before: getAssetUrl("/images/sofa-cleaning.png"), after: getAssetUrl("/images/modern-house.png") }
     ],
     excluded: [
         "Remoción de manchas de pegamento/pintura/calcomanías",

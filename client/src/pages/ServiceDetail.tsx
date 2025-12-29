@@ -109,7 +109,7 @@ export default function ServiceDetail() {
               {/* Video/Hero Placeholder */}
               <div className="relative aspect-video rounded-3xl overflow-hidden shadow-xl group cursor-pointer bg-slate-900">
                  <img 
-                  src="/images/hero-clean.png" 
+                  src={getAssetUrl("/images/hero-clean.png")}
                   className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" 
                   alt="Service Preview"
                 />

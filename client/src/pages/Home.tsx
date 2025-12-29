@@ -16,6 +16,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 
 import { ProblemItem, SolutionItem, StepItem, Testimonial } from "@/components/home/HomeComponents";
+import { getAssetUrl } from "@/lib/utils";
 
 export default function HomePage() {
   return (
@@ -24,7 +25,7 @@ export default function HomePage() {
       <section className="relative min-h-[700px] flex flex-col justify-center bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/hero-clean.png" 
+            src={getAssetUrl("/images/hero-clean.png")}
             alt="Residenz Professional" 
             className="w-full h-full object-cover object-center opacity-60"
           />
@@ -169,7 +170,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.02 }}
               className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10"
             >
-              <img src="/images/warranty.png" alt="Garantía Residenz" className="w-full h-auto" />
+              <img src={getAssetUrl("/images/warranty.png")} alt="Garantía Residenz" className="w-full h-auto" />
             </motion.div>
 
             <div className="text-left space-y-6">

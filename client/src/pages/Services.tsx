@@ -22,6 +22,8 @@ import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
+import { getAssetUrl } from "@/lib/utils";
+
 export default function ServicesPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);

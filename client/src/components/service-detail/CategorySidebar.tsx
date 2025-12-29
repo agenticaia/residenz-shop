@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn, getAssetUrl } from "@/lib/utils";
 
 interface CategorySidebarProps {
   activeSidebar: string;
@@ -23,7 +23,7 @@ export function CategorySidebar({ activeSidebar, setActiveSidebar, setCurrentTab
           )}
         >
           <div className="w-12 h-12 rounded-lg overflow-hidden shrink-0 border border-slate-100">
-            <img src="/images/apartment-view.png" alt="Departamento" className="w-full h-full object-cover" />
+            <img src={getAssetUrl("/images/apartment-view.png")} alt="Departamento" className="w-full h-full object-cover" />
           </div>
           <span className={cn("font-semibold text-sm", activeSidebar === "department" ? "text-primary" : "text-slate-700")}>
             Departamento
@@ -40,7 +40,7 @@ export function CategorySidebar({ activeSidebar, setActiveSidebar, setCurrentTab
           )}
         >
           <div className="w-12 h-12 rounded-lg overflow-hidden shrink-0 border border-slate-100">
-            <img src="/images/modern-house.png" alt="Bungalow" className="w-full h-full object-cover" />
+            <img src={getAssetUrl("/images/modern-house.png")} alt="Bungalow" className="w-full h-full object-cover" />
           </div>
           <span className={cn("font-semibold text-sm", activeSidebar === "bungalow" ? "text-primary" : "text-slate-700")}>
             Bungalow/dúplex
@@ -57,7 +57,7 @@ export function CategorySidebar({ activeSidebar, setActiveSidebar, setCurrentTab
           )}
         >
           <div className="w-12 h-12 rounded-lg overflow-hidden shrink-0 border border-slate-100">
-             <img src="/images/bedroom-clean.png" alt="Room" className="w-full h-full object-cover" />
+             <img src={getAssetUrl("/images/bedroom-clean.png")} alt="Room" className="w-full h-full object-cover" />
           </div>
           <span className={cn("font-semibold text-sm", activeSidebar === "room" ? "text-primary" : "text-slate-700")}>
             Reservar por habitación
@@ -74,7 +74,7 @@ export function CategorySidebar({ activeSidebar, setActiveSidebar, setCurrentTab
           )}
         >
           <div className="w-12 h-12 rounded-lg overflow-hidden shrink-0 border border-slate-100">
-             <img src="/images/sofa-cleaning.png" alt="Mini Services" className="w-full h-full object-cover" />
+             <img src={getAssetUrl("/images/sofa-cleaning.png")} alt="Mini Services" className="w-full h-full object-cover" />
           </div>
           <span className={cn("font-semibold text-sm", activeSidebar === "mini" ? "text-primary" : "text-slate-700")}>
             Mini servicios
