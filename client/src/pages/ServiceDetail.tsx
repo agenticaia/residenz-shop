@@ -29,7 +29,7 @@ import {
   ArrowRight,
   Zap
 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, getAssetUrl } from "@/lib/utils";
 import { useLocation } from "wouter";
 
 export default function ServiceDetail() {
@@ -436,7 +436,7 @@ export default function ServiceDetail() {
                        </div>
                      </div>
                      <img 
-                       src="/images/staff-maria.png" 
+                       src={getAssetUrl("/images/staff-maria.png")} 
                        className="absolute bottom-0 right-0 h-full w-auto object-contain object-bottom grayscale-[0.2] hover:grayscale-0 transition-all duration-500"
                        alt="Staff"
                      />

@@ -183,7 +183,7 @@ export default function ServiceDetailImproved() {
                         "Limpieza y remoción de manchas de habitaciones, cocina, baño y balcón.",
                         "Fregado de pisos con máquina y desempolvado de paredes y techos."
                       ]}
-                      imageUrl="/images/apartment-view.png"
+                      imageUrl={getAssetUrl("/images/apartment-view.png")}
                       onAdd={() => handleAddClick('house')}
                       onViewDetails={() => handleViewDetails('furnished-apt')}
                     />
@@ -199,7 +199,7 @@ export default function ServiceDetailImproved() {
                         "Limpieza profunda de pisos, baños y cocina vacía.",
                         "Ideal para mudanzas (entrada/salida)."
                       ]}
-                      imageUrl="/images/apartment-view.png"
+                      imageUrl={getAssetUrl("/images/apartment-view.png")}
                       onAdd={() => handleAddClick('house')}
                       onViewDetails={() => handleViewDetails('unfurnished-apt')}
                     />
@@ -836,7 +836,7 @@ export default function ServiceDetailImproved() {
                                 ))}
                             </div>
                             <div className="w-32 h-32 md:w-40 md:h-40 shrink-0 relative">
-                                <img src="/images/staff-maria.png" alt="Limpiador profesional" className="w-full h-full object-cover rounded-full border-4 border-slate-50 shadow-lg" />
+                                <img src={getAssetUrl("/images/staff-maria.png")} alt="Limpiador profesional" className="w-full h-full object-cover rounded-full border-4 border-slate-50 shadow-lg" />
                                 <div className="absolute -bottom-2 -right-2 bg-white px-3 py-1 rounded-full shadow-md flex items-center gap-1">
                                     <Award className="w-4 h-4 text-primary" />
                                     <span className="text-xs font-bold text-slate-900">Top</span>

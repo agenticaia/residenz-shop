@@ -141,7 +141,7 @@ export default function HomePage() {
             <div className="relative group max-w-2xl w-full">
               <div className="absolute -inset-1 bg-gradient-to-r from-secondary to-primary rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
               <Card className="relative overflow-hidden border-0 bg-white">
-                <img src="/images/amenities.png" alt="Detalle Hotelero" className="w-full h-80 object-cover" />
+                <img src={getAssetUrl("/images/amenities.png")} alt="Detalle Hotelero" className="w-full h-80 object-cover" />
                 <div className="p-6 text-center">
                   <span className="text-sm font-bold text-primary uppercase tracking-widest">El Detalle "Wow"</span>
                   <p className="text-slate-600 italic mt-2">No es solo limpieza, es hospitalidad en cada rincón.</p>
@@ -229,13 +229,13 @@ export default function HomePage() {
                 name="Brian C." 
                 location="Surco" 
                 text="Lo que me convenció fue el seguro. Saber que si pasa algo, ellos responden, me da paz." 
-                image="/images/staff-maria.png"
+                image={getAssetUrl("/images/staff-maria.png")}
               />
               <Testimonial 
                 name="Janina S." 
                 location="Miraflores" 
                 text="Odiaba repetir instrucciones. Ahora llegan y saben exactamente qué hacer. Es magia." 
-                image="/images/staff-maria.png"
+                image={getAssetUrl("/images/staff-maria.png")}
               />
             </div>
           </div>

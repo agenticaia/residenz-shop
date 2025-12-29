@@ -110,13 +110,13 @@ export const detailsData: Record<string, {
     price: "Desde S/ 150",
     duration: "3 hrs",
     included: [
-        { title: "Limpieza profunda de pisos", icon: "/images/bedroom-clean.png" },
-        { title: "Desinfección de baños completa", icon: "/images/apartment-view.png" },
-        { title: "Limpieza de cocina (interior/exterior)", icon: "/images/modern-house.png" },
-        { title: "Vidrios interiores", icon: "/images/apartment-view.png" }
+        { title: "Limpieza profunda de pisos", icon: getAssetUrl("/images/bedroom-clean.png") },
+        { title: "Desinfección de baños completa", icon: getAssetUrl("/images/apartment-view.png") },
+        { title: "Limpieza de cocina (interior/exterior)", icon: getAssetUrl("/images/modern-house.png") },
+        { title: "Vidrios interiores", icon: getAssetUrl("/images/apartment-view.png") }
     ],
     difference: [
-        { before: "/images/bedroom-clean.png", after: "/images/hero-clean.png" }
+        { before: getAssetUrl("/images/bedroom-clean.png"), after: getAssetUrl("/images/hero-clean.png") }
     ],
     excluded: ["Muebles (ya que está vacío)", "Áreas exteriores"]
   },
@@ -125,14 +125,14 @@ export const detailsData: Record<string, {
     price: "Desde S/ 250",
     duration: "5 hrs 20 mins",
     included: [
-        { title: "Todas las habitaciones y salas", icon: "/images/bedroom-clean.png" },
-        { title: "Cocina y baños completos", icon: "/images/modern-house.png" },
-        { title: "Terraza y porche", icon: "/images/apartment-view.png" },
-        { title: "Ventanas accesibles", icon: "/images/hero-clean.png" }
+        { title: "Todas las habitaciones y salas", icon: getAssetUrl("/images/bedroom-clean.png") },
+        { title: "Cocina y baños completos", icon: getAssetUrl("/images/modern-house.png") },
+        { title: "Terraza y porche", icon: getAssetUrl("/images/apartment-view.png") },
+        { title: "Ventanas accesibles", icon: getAssetUrl("/images/hero-clean.png") }
     ],
     difference: [
-         { before: "/images/sofa-cleaning.png", after: "/images/modern-house.png" },
-         { before: "/images/bedroom-clean.png", after: "/images/hero-clean.png" }
+         { before: getAssetUrl("/images/sofa-cleaning.png"), after: getAssetUrl("/images/modern-house.png") },
+         { before: getAssetUrl("/images/bedroom-clean.png"), after: getAssetUrl("/images/hero-clean.png") }
     ],
     excluded: ["Jardinería", "Limpieza de fachada alta"]
   },
@@ -141,12 +141,12 @@ export const detailsData: Record<string, {
     price: "Desde S/ 200",
     duration: "5 hrs",
     included: [
-        { title: "Pisos y zócalos", icon: "/images/bedroom-clean.png" },
-        { title: "Baños y cocina a fondo", icon: "/images/modern-house.png" },
-        { title: "Puertas y marcos", icon: "/images/apartment-view.png" }
+        { title: "Pisos y zócalos", icon: getAssetUrl("/images/bedroom-clean.png") },
+        { title: "Baños y cocina a fondo", icon: getAssetUrl("/images/modern-house.png") },
+        { title: "Puertas y marcos", icon: getAssetUrl("/images/apartment-view.png") }
     ],
     difference: [
-         { before: "/images/bedroom-clean.png", after: "/images/hero-clean.png" }
+         { before: getAssetUrl("/images/bedroom-clean.png"), after: getAssetUrl("/images/hero-clean.png") }
     ],
     excluded: ["Muebles", "Garaje (opcional)"]
   },
@@ -155,11 +155,11 @@ export const detailsData: Record<string, {
     price: 45,
     duration: "1 hr",
     included: [
-        { title: "Tendendido de cama", icon: "/images/bedroom-clean.png" },
-        { title: "Desempolvado de superficies", icon: "/images/sofa-cleaning.png" },
-        { title: "Aspirado de pisos/alfombras", icon: "/images/hero-clean.png" }
+        { title: "Tendendido de cama", icon: getAssetUrl("/images/bedroom-clean.png") },
+        { title: "Desempolvado de superficies", icon: getAssetUrl("/images/sofa-cleaning.png") },
+        { title: "Aspirado de pisos/alfombras", icon: getAssetUrl("/images/hero-clean.png") }
     ],
-    difference: [{ before: "/images/bedroom-clean.png", after: "/images/hero-clean.png" }],
+    difference: [{ before: getAssetUrl("/images/bedroom-clean.png"), after: getAssetUrl("/images/hero-clean.png") }],
     excluded: ["Baño interno (adicional)", "Ordenamiento de closet"]
   },
   'kitchen-cleaning': {
@@ -167,12 +167,12 @@ export const detailsData: Record<string, {
     price: 80,
     duration: "2 hrs",
     included: [
-        { title: "Limpieza exterior de gabinetes", icon: "/images/modern-house.png" },
-        { title: "Electrodomésticos (exterior)", icon: "/images/sofa-cleaning.png" },
-        { title: "Fregadero y grifería", icon: "/images/apartment-view.png" },
-        { title: "Pisos y zócalos", icon: "/images/bedroom-clean.png" }
+        { title: "Limpieza exterior de gabinetes", icon: getAssetUrl("/images/modern-house.png") },
+        { title: "Electrodomésticos (exterior)", icon: getAssetUrl("/images/sofa-cleaning.png") },
+        { title: "Fregadero y grifería", icon: getAssetUrl("/images/apartment-view.png") },
+        { title: "Pisos y zócalos", icon: getAssetUrl("/images/bedroom-clean.png") }
     ],
-    difference: [{ before: "/images/modern-house.png", after: "/images/hero-clean.png" }],
+    difference: [{ before: getAssetUrl("/images/modern-house.png"), after: getAssetUrl("/images/hero-clean.png") }],
     excluded: ["Interior de refrigeradora (adicional)", "Vajilla acumulada"]
   },
   'living-cleaning': {
@@ -180,11 +180,11 @@ export const detailsData: Record<string, {
     price: 50,
     duration: "1.5 hrs",
     included: [
-        { title: "Aspirado de alfombras", icon: "/images/sofa-cleaning.png" },
-        { title: "Limpieza de muebles", icon: "/images/sofa-cleaning.png" },
-        { title: "Vidrios interiores", icon: "/images/apartment-view.png" }
+        { title: "Aspirado de alfombras", icon: getAssetUrl("/images/sofa-cleaning.png") },
+        { title: "Limpieza de muebles", icon: getAssetUrl("/images/sofa-cleaning.png") },
+        { title: "Vidrios interiores", icon: getAssetUrl("/images/apartment-view.png") }
     ],
-    difference: [{ before: "/images/sofa-cleaning.png", after: "/images/modern-house.png" }],
+    difference: [{ before: getAssetUrl("/images/sofa-cleaning.png"), after: getAssetUrl("/images/modern-house.png") }],
     excluded: ["Lavado profundo de tapiz (es otro servicio)"]
   },
   'bath-cleaning': {
@@ -192,11 +192,11 @@ export const detailsData: Record<string, {
     price: 40,
     duration: "1 hr",
     included: [
-        { title: "Desinfección de inodoro", icon: "/images/bedroom-clean.png" },
-        { title: "Limpieza de ducha/bañera", icon: "/images/hero-clean.png" },
-        { title: "Espejos y lavabo", icon: "/images/apartment-view.png" }
+        { title: "Desinfección de inodoro", icon: getAssetUrl("/images/bedroom-clean.png") },
+        { title: "Limpieza de ducha/bañera", icon: getAssetUrl("/images/hero-clean.png") },
+        { title: "Espejos y lavabo", icon: getAssetUrl("/images/apartment-view.png") }
     ],
-    difference: [{ before: "/images/bedroom-clean.png", after: "/images/hero-clean.png" }],
+    difference: [{ before: getAssetUrl("/images/bedroom-clean.png"), after: getAssetUrl("/images/hero-clean.png") }],
     excluded: ["Tuberías internas"]
   },
   'balcony-cleaning': {
@@ -204,10 +204,10 @@ export const detailsData: Record<string, {
     price: 30,
     duration: "45 mins",
     included: [
-        { title: "Barrido y trapeado", icon: "/images/apartment-view.png" },
-        { title: "Limpieza de barandas", icon: "/images/modern-house.png" }
+        { title: "Barrido y trapeado", icon: getAssetUrl("/images/apartment-view.png") },
+        { title: "Limpieza de barandas", icon: getAssetUrl("/images/modern-house.png") }
     ],
-    difference: [{ before: "/images/apartment-view.png", after: "/images/modern-house.png" }],
+    difference: [{ before: getAssetUrl("/images/apartment-view.png"), after: getAssetUrl("/images/modern-house.png") }],
     excluded: ["Vidrios exteriores de difícil acceso"]
   },
   'appliances-cleaning': {
@@ -215,10 +215,10 @@ export const detailsData: Record<string, {
     price: 39,
     duration: "45 mins",
     included: [
-        { title: "Refrigeradora (interior)", icon: "/images/modern-house.png" },
-        { title: "Microondas", icon: "/images/sofa-cleaning.png" }
+        { title: "Refrigeradora (interior)", icon: getAssetUrl("/images/modern-house.png") },
+        { title: "Microondas", icon: getAssetUrl("/images/sofa-cleaning.png") }
     ],
-    difference: [{ before: "/images/modern-house.png", after: "/images/hero-clean.png" }],
+    difference: [{ before: getAssetUrl("/images/modern-house.png"), after: getAssetUrl("/images/hero-clean.png") }],
     excluded: ["Reparaciones"]
   },
   'sofa-cleaning': {
@@ -226,11 +226,11 @@ export const detailsData: Record<string, {
     price: 60,
     duration: "1.5 hrs",
     included: [
-        { title: "Aspirado profundo", icon: "/images/sofa-cleaning.png" },
-        { title: "Lavado con máquina", icon: "/images/sofa-cleaning.png" },
-        { title: "Eliminación de olores", icon: "/images/hero-clean.png" }
+        { title: "Aspirado profundo", icon: getAssetUrl("/images/sofa-cleaning.png") },
+        { title: "Lavado con máquina", icon: getAssetUrl("/images/sofa-cleaning.png") },
+        { title: "Eliminación de olores", icon: getAssetUrl("/images/hero-clean.png") }
     ],
-    difference: [{ before: "/images/sofa-cleaning.png", after: "/images/modern-house.png" }],
+    difference: [{ before: getAssetUrl("/images/sofa-cleaning.png"), after: getAssetUrl("/images/modern-house.png") }],
     excluded: ["Reparación de tapiz", "Manchas permanentes"]
   },
   'furniture-cleaning': {
@@ -238,10 +238,10 @@ export const detailsData: Record<string, {
     price: 40,
     duration: "1 hr",
     included: [
-        { title: "Sillas y mesas", icon: "/images/sofa-cleaning.png" },
-        { title: "Desempolvado", icon: "/images/bedroom-clean.png" }
+        { title: "Sillas y mesas", icon: getAssetUrl("/images/sofa-cleaning.png") },
+        { title: "Desempolvado", icon: getAssetUrl("/images/bedroom-clean.png") }
     ],
-    difference: [{ before: "/images/sofa-cleaning.png", after: "/images/modern-house.png" }],
+    difference: [{ before: getAssetUrl("/images/sofa-cleaning.png"), after: getAssetUrl("/images/modern-house.png") }],
     excluded: ["Restauración de madera"]
   },
   'ceiling-cleaning': {
@@ -249,10 +249,10 @@ export const detailsData: Record<string, {
     price: 199,
     duration: "2 hrs",
     included: [
-        { title: "Eliminación de telarañas", icon: "/images/hero-clean.png" },
-        { title: "Limpieza de luminarias", icon: "/images/apartment-view.png" }
+        { title: "Eliminación de telarañas", icon: getAssetUrl("/images/hero-clean.png") },
+        { title: "Limpieza de luminarias", icon: getAssetUrl("/images/apartment-view.png") }
     ],
-    difference: [{ before: "/images/modern-house.png", after: "/images/hero-clean.png" }],
+    difference: [{ before: getAssetUrl("/images/modern-house.png"), after: getAssetUrl("/images/hero-clean.png") }],
     excluded: ["Pintura"]
   },
   'default': {
@@ -260,11 +260,11 @@ export const detailsData: Record<string, {
      price: "Consultar",
      duration: "Variable",
      included: [
-        { title: "Limpieza profesional", icon: "/images/bedroom-clean.png" },
-        { title: "Insumos y equipos", icon: "/images/sofa-cleaning.png" }
+        { title: "Limpieza profesional", icon: getAssetUrl("/images/bedroom-clean.png") },
+        { title: "Insumos y equipos", icon: getAssetUrl("/images/sofa-cleaning.png") }
      ],
      difference: [
-         { before: "/images/bedroom-clean.png", after: "/images/hero-clean.png" }
+         { before: getAssetUrl("/images/bedroom-clean.png"), after: getAssetUrl("/images/hero-clean.png") }
      ],
      excluded: ["Materiales industriales"]
   }

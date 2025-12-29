@@ -145,7 +145,7 @@ export default function CategoryPage() {
         {/* Background Image & Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/hero-clean.png" 
+            src={getAssetUrl("/images/hero-clean.png")} 
             alt="Equipo de limpieza profesional" 
             className="w-full h-full object-cover object-center"
           />
