@@ -21,10 +21,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="bg-primary text-white p-1.5 rounded-lg group-hover:bg-primary/90 transition-colors">
+            <div className="bg-primary text-white p-1.5 rounded-lg group-hover:bg-primary/90 transition-colors shrink-0">
               <ShieldCheck className="w-5 h-5" />
             </div>
-            <span className="font-heading font-bold text-xl tracking-tight text-primary">Residenz</span>
+            <span className="font-heading font-bold text-xl tracking-tight text-primary truncate">Residenz</span>
           </Link>
 
           {/* Desktop Nav */}

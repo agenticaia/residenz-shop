@@ -105,4 +105,28 @@
   .font-heading {
     font-family: var(--font-heading);
   }
+
+  .hover-elevate {
+    @apply transition-all duration-200 ease-in-out active:scale-[0.98] active:translate-y-0 active:shadow-sm;
+  }
+  
+  .hover-elevate:hover {
+    @apply -translate-y-0.5 shadow-md;
+  }
+
+  /* Mobile Scrollbar Hide */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Base Mobile Optimizations */
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }

@@ -297,7 +297,7 @@ export default function MyHome() {
                     <Card 
                       key={section.id} 
                       onClick={() => setSelectedSection(section)}
-                      className="p-4 border-slate-100 shadow-sm hover:shadow-md transition-shadow cursor-pointer group active:scale-[0.98] duration-200"
+                      className="p-4 border-slate-100 shadow-sm hover:shadow-md transition-all cursor-pointer group active:scale-[0.98] duration-200"
                     >
                         <div className="flex items-start gap-4">
                             <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-primary/5 transition-colors">

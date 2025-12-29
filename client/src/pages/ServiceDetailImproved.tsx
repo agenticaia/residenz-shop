@@ -445,7 +445,7 @@ export default function ServiceDetailImproved() {
             if (!open) setShowIncluded(false); // Reset on close
             setIsOpen(open);
         }}>
-          <DialogContent className="max-w-md p-0 overflow-hidden rounded-3xl gap-0 border-0 shadow-2xl">
+          <DialogContent className="w-full sm:max-w-md p-0 overflow-hidden rounded-t-3xl sm:rounded-3xl gap-0 border-0 shadow-2xl fixed bottom-0 sm:bottom-auto sm:relative translate-y-0 sm:translate-y-0 top-auto sm:top-1/2 left-0 sm:left-1/2 right-0 sm:right-auto sm:-translate-x-1/2 sm:-translate-y-1/2 h-[85vh] sm:h-auto">
             {showIncluded ? (
               // "What's included" View
               <div className="bg-white animate-in slide-in-from-right-10 duration-300">
@@ -727,7 +727,7 @@ export default function ServiceDetailImproved() {
 
         {/* Details Modal */}
         <Dialog open={showDetailsModal} onOpenChange={setShowDetailsModal}>
-          <DialogContent className="max-w-md p-0 overflow-hidden rounded-3xl gap-0 border-0 shadow-2xl h-[85vh] flex flex-col">
+          <DialogContent className="w-full sm:max-w-md p-0 overflow-hidden rounded-t-3xl sm:rounded-3xl gap-0 border-0 shadow-2xl h-[90vh] sm:h-[85vh] flex flex-col fixed bottom-0 sm:bottom-auto sm:relative translate-y-0 sm:translate-y-0 top-auto sm:top-1/2 left-0 sm:left-1/2 right-0 sm:right-auto sm:-translate-x-1/2 sm:-translate-y-1/2">
             <div className="bg-white h-full flex flex-col min-h-0">
                  <div className="p-6 border-b border-slate-100 flex items-start justify-between sticky top-0 bg-white z-10 shrink-0">
                     <div>
