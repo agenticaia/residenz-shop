@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { 
   ChevronDown, 
   Search, 
@@ -7,7 +7,6 @@ import {
   User, 
   ShieldCheck, 
   Sparkles, 
-  X,
   Bath,
   Utensils,
   Home,
@@ -15,16 +14,24 @@ import {
   Shirt,
   Wind,
   Droplets,
-  Bug
+  Bug,
+  MapPin
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog";
-import { cn } from "@/lib/utils";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-export default function ServicesPage() {
+export default function CategoryPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedDistrict, setSelectedDistrict] = useState("Lima Moderna");
+  const [, setLocation] = useLocation();
 
   // Categories data
   const categories = [
@@ -44,6 +51,25 @@ export default function ServicesPage() {
     { id: "sofa", title: "Sofás", icon: Sofa, color: "#6366F1" },
   ];
 
+  const districts = [
+    "Lima Moderna",
+    "Miraflores",
+    "San Isidro",
+    "Barranco",
+    "Santiago de Surco",
+    "La Molina"
+  ];
+
+  const handleSubServiceClick = (subId: string) => {
+    // Navigate to details page with district and service info
+    const params = new URLSearchParams({
+      distrito: selectedDistrict.toLowerCase().replace(/ /g, '-'),
+      categoria: "cleaning",
+      servicio: subId
+    });
+    setLocation(`/detalle-servicio?${params.toString()}`);
+  };
+
   return (
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
       {/* HEADER */}
@@ -60,12 +86,28 @@ export default function ServicesPage() {
               </div>
             </Link>
             
-            <div className="hidden md:flex items-center gap-2 px-3 py-2 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors group">
-              <div className="text-[14px] font-medium text-[#1a1a1a] group-hover:text-primary transition-colors truncate max-w-[200px]">
-                16/16px Dadar, Bombay
-              </div>
-              <ChevronDown className="w-4 h-4 text-[#666666] group-hover:text-primary transition-colors" />
-            </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <div className="hidden md:flex items-center gap-2 px-3 py-2 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors group border border-transparent hover:border-gray-200">
+                  <MapPin className="w-4 h-4 text-[#666666] group-hover:text-primary transition-colors" />
+                  <div className="text-[14px] font-medium text-[#1a1a1a] group-hover:text-primary transition-colors truncate max-w-[200px]">
+                    {selectedDistrict}
+                  </div>
+                  <ChevronDown className="w-4 h-4 text-[#666666] group-hover:text-primary transition-colors" />
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56 bg-white">
+                {districts.map((district) => (
+                  <DropdownMenuItem 
+                    key={district}
+                    onClick={() => setSelectedDistrict(district)}
+                    className="cursor-pointer hover:bg-slate-50 font-medium"
+                  >
+                    {district}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Search Bar */}
@@ -111,17 +153,15 @@ export default function ServicesPage() {
         {/* Content */}
         <div className="container mx-auto px-4 md:px-6 h-full relative z-10 flex flex-col justify-center">
           <div className="max-w-xl animate-in slide-in-from-left-10 duration-700 fade-in">
-            <h1 className="text-white text-[32px] md:text-[40px] font-bold leading-tight mb-4 drop-shadow-lg">
+            <h1 className="text-white text-[28px] md:text-[40px] font-bold leading-tight mb-4 drop-shadow-lg">
               Servicios a domicilio <br/> a tu puerta
             </h1>
-            <p className="text-white/90 text-[16px] md:text-[18px] font-medium max-w-md leading-relaxed mb-8">
+            <p className="text-white/90 text-[14px] md:text-[18px] font-medium max-w-md leading-relaxed mb-8">
               Expertos verificados, precios transparentes y garantía de satisfacción total en cada servicio.
             </p>
-            <Link href="/detalle-servicio">
-              <Button className="h-12 px-8 rounded-full bg-white text-black hover:bg-white/90 font-bold text-sm shadow-xl transition-transform hover:scale-105">
-                Explorar Servicios
-              </Button>
-            </Link>
+            <Button className="h-12 px-8 rounded-full bg-white text-black hover:bg-white/90 font-bold text-sm shadow-xl transition-transform hover:scale-105">
+              Explorar Servicios
+            </Button>
           </div>
         </div>
       </section>
@@ -136,15 +176,15 @@ export default function ServicesPage() {
               <Dialog key={category.id} open={category.id === "cleaning" ? isModalOpen : false} onOpenChange={category.id === "cleaning" ? setIsModalOpen : undefined}>
                 <DialogTrigger asChild>
                   <div 
-                    className="bg-white rounded-[12px] p-8 flex flex-col items-center justify-center gap-4 cursor-pointer shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-[180px] group border border-transparent hover:border-black/5"
+                    className="bg-white rounded-[8px] p-8 flex flex-col items-center justify-center gap-4 cursor-pointer shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-[140px] group border border-transparent hover:border-black/5"
                     onClick={() => category.id !== "cleaning" && console.log(`Clicked ${category.title}`)}
                   >
                     <div 
-                      className="w-[80px] h-[80px] rounded-full flex items-center justify-center transition-transform group-hover:scale-110 duration-500"
-                      style={{ backgroundColor: `${category.color}15` }} // 15 = approx 8% opacity hex
+                      className="w-[64px] h-[64px] rounded-full flex items-center justify-center transition-transform group-hover:scale-110 duration-500"
+                      style={{ backgroundColor: `${category.color}15` }}
                     >
                       <category.icon 
-                        className="w-[40px] h-[40px] transition-colors" 
+                        className="w-[32px] h-[32px] transition-colors" 
                         style={{ color: category.color }} 
                       />
                     </div>
@@ -154,14 +194,14 @@ export default function ServicesPage() {
                   </div>
                 </DialogTrigger>
 
-                {/* MODAL LIMPIEZA Y CONTROL - Only renders for cleaning category */}
+                {/* MODAL LIMPIEZA Y CONTROL */}
                 {category.id === "cleaning" && (
-                  <DialogContent className="max-w-[600px] p-0 gap-0 bg-white rounded-[16px] overflow-hidden border-0 shadow-2xl">
-                    <div className="p-8">
+                  <DialogContent className="max-w-[600px] p-8 gap-0 bg-white rounded-[12px] overflow-hidden border-0 shadow-2xl">
+                    <div className="">
                       {/* Modal Header */}
                       <div className="flex items-center justify-between mb-8">
                         <h3 className="text-[24px] font-bold text-[#1a1a1a]">Limpieza</h3>
-                        {/* Close button is handled by DialogClose or default X, but we can customize if needed */}
+                        {/* Close button is handled by DialogClose */}
                       </div>
 
                       {/* Modal Section */}
@@ -171,27 +211,24 @@ export default function ServicesPage() {
                         {/* Grid */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 justify-items-center">
                           {subServices.map((sub) => (
-                            <Link href="/detalle-servicio" key={sub.id}>
-                              <div className="bg-[#f5f5f5] rounded-[8px] p-4 flex flex-col items-center cursor-pointer hover:bg-[#e8e8e8] hover:shadow-md transition-all group w-[120px] h-[140px] justify-center">
-                                <div className="w-[64px] h-[64px] mb-3 flex items-center justify-center">
-                                  <sub.icon 
-                                    className="w-[40px] h-[40px] text-gray-600 group-hover:scale-110 transition-transform duration-300" 
-                                    style={{ color: sub.color }}
-                                  />
-                                </div>
-                                <span className="text-[12px] font-semibold text-[#1a1a1a] text-center leading-[1.4]">
-                                  {sub.title}
-                                </span>
+                            <div 
+                              key={sub.id}
+                              onClick={() => handleSubServiceClick(sub.id)}
+                              className="bg-[#f5f5f5] rounded-[8px] p-3 flex flex-col items-center cursor-pointer hover:bg-[#e8e8e8] hover:shadow-md transition-all group w-[120px] h-[140px] justify-center"
+                            >
+                              <div className="w-[64px] h-[64px] mb-2 flex items-center justify-center">
+                                <sub.icon 
+                                  className="w-[40px] h-[40px] text-gray-600 group-hover:scale-110 transition-transform duration-300" 
+                                  style={{ color: sub.color }}
+                                />
                               </div>
-                            </Link>
+                              <span className="text-[12px] font-semibold text-[#1a1a1a] text-center leading-[1.4] mt-2">
+                                {sub.title}
+                              </span>
+                            </div>
                           ))}
                         </div>
                       </div>
-                    </div>
-                    
-                    {/* Modal Footer/Banner (Optional addition for visual flair) */}
-                    <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-4 text-center border-t border-primary/10">
-                      <p className="text-xs font-medium text-primary">Garantía de satisfacción del 100% en todos los servicios</p>
                     </div>
                   </DialogContent>
                 )}

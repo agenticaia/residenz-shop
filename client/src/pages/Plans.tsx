@@ -42,7 +42,7 @@ export default function Plans() {
                 <PlanFeature text="Manual Digital de Preferencias" negative />
               </div>
 
-              <Link href="/service-detail">
+              <Link href="/detalle-servicio">
                 <Button variant="outline" className="w-full border-slate-300">
                   Agendar Una Vez
                 </Button>
@@ -73,7 +73,7 @@ export default function Plans() {
                 <PlanFeature text="Reemplazo inmediato por baja" />
               </div>
 
-              <Link href="/service-detail">
+              <Link href="/detalle-servicio">
                 <Button className="w-full bg-primary hover:bg-primary/90 h-12 text-lg font-bold">
                   Quiero mi primera visita blindada
                 </Button>
@@ -103,7 +103,7 @@ export default function Plans() {
                 <PlanFeature text="Protocolos personalizados" />
               </div>
 
-              <Link href="/service-detail">
+              <Link href="/detalle-servicio">
                 <Button variant="outline" className="w-full border-slate-300">
                   Contactar Ventas
                 </Button>

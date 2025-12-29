@@ -15,6 +15,8 @@ import {
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 
+import { ProblemItem, SolutionItem, StepItem, Testimonial } from "@/components/home/HomeComponents";
+
 export default function HomePage() {
   return (
     <Layout>
@@ -45,7 +47,7 @@ export default function HomePage() {
             </p>
             
             <div className="flex flex-col items-center gap-4">
-              <Link href="/service-detail">
+              <Link href="/detalle-servicio">
                 <Button size="lg" className="h-16 px-10 text-xl font-bold bg-primary hover:bg-primary/90 shadow-2xl shadow-primary/40 rounded-full group">
                   QUIERO MI PRIMERA VISITA BLINDADA
                   <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -101,7 +103,7 @@ export default function HomePage() {
                 <ProblemItem text="Calidad impredecible y artesanal." />
               </ul>
               <div className="mt-12">
-                <Link href="/service-detail">
+                <Link href="/detalle-servicio">
                   <Button variant="outline" className="w-full h-14 border-primary text-primary hover:bg-primary/5 font-bold rounded-xl">
                     Quiero mi primera visita blindada
                   </Button>
@@ -125,7 +127,7 @@ export default function HomePage() {
                 <SolutionItem text="Estándar Hotelero garantizado." />
               </ul>
               <div className="mt-12">
-                <Link href="/service-detail">
+                <Link href="/detalle-servicio">
                   <Button className="w-full h-14 bg-secondary text-primary hover:bg-secondary/90 font-bold rounded-xl">
                     Agendar con Garantía
                   </Button>
@@ -177,7 +179,7 @@ export default function HomePage() {
               <p className="text-lg text-slate-300 font-light leading-relaxed">
                 Olvídate de la responsabilidad civil o laboral. Nosotros asumimos el riesgo por ti. Si tu Resi se accidenta o algo se daña, nuestra póliza responde en 24 horas.
               </p>
-              <Link href="/service-detail">
+              <Link href="/detalle-servicio">
                 <Button className="bg-secondary text-primary hover:bg-secondary/90 px-8 h-12 rounded-full font-bold uppercase tracking-wider text-xs">
                   Quiero mi primera visita blindada
                 </Button>
@@ -243,7 +245,7 @@ export default function HomePage() {
               ¿LISTO PARA DEJAR DE PREOCUPARTE POR TU HOGAR?
             </h2>
             <div className="space-y-4">
-              <Link href="/service-detail">
+              <Link href="/detalle-servicio">
                 <Button size="lg" className="h-20 px-12 text-2xl font-bold bg-primary hover:bg-primary/90 shadow-2xl rounded-2xl w-full md:w-auto uppercase italic tracking-tighter">
                   AGENDAR MI PRUEBA CON GARANTÍA
                 </Button>
@@ -259,52 +261,3 @@ export default function HomePage() {
   );
 }
 
-function ProblemItem({ text }: { text: string }) {
-  return (
-    <li className="flex items-start gap-4 text-slate-500 font-medium text-lg leading-snug">
-      <span className="text-red-500 text-2xl shrink-0 leading-none">✕</span>
-      <span>{text}</span>
-    </li>
-  );
-}
-
-function SolutionItem({ text }: { text: string }) {
-  return (
-    <li className="flex items-start gap-4 text-white font-semibold text-lg leading-snug">
-      <span className="text-secondary text-2xl shrink-0 leading-none">✓</span>
-      <span>{text}</span>
-    </li>
-  );
-}
-
-function StepItem({ icon: Icon, title, desc }: { icon: any, title: string, desc: string }) {
-  return (
-    <div className="flex flex-col items-center text-center space-y-4 group">
-      <div className="w-20 h-20 rounded-3xl bg-slate-50 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-xl group-hover:-translate-y-2">
-        <Icon className="w-10 h-10" />
-      </div>
-      <h4 className="text-xl font-heading font-bold text-primary">{title}</h4>
-      <p className="text-slate-600 leading-relaxed px-4">{desc}</p>
-    </div>
-  );
-}
-
-function Testimonial({ name, location, text, image }: { name: string, location: string, text: string, image: string }) {
-  return (
-    <Card className="p-8 border-0 bg-white shadow-xl rounded-[2rem] hover:scale-[1.02] transition-transform duration-500">
-      <div className="flex items-center gap-4 mb-6">
-        <img src={image} alt={name} className="w-14 h-14 rounded-full object-cover ring-2 ring-secondary/20" />
-        <div>
-          <h4 className="font-bold text-primary">{name}</h4>
-          <p className="text-xs text-slate-400 uppercase tracking-widest">{location}</p>
-        </div>
-      </div>
-      <p className="text-slate-600 italic leading-relaxed text-lg">"{text}"</p>
-      <div className="mt-6 flex gap-1">
-        {[...Array(5)].map((_, i) => (
-          <Star key={i} className="w-4 h-4 text-secondary fill-secondary" />
-        ))}
-      </div>
-    </Card>
-  );
-}

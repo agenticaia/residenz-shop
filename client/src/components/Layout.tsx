@@ -10,7 +10,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   const navItems = [
     { label: "Inicio", href: "/" },
-    { label: "Servicios", href: "/services" },
+    { label: "Servicios", href: "/detalle-servicio" },
     { label: "Sobre Nosotros", href: "/about" },
     { label: "Planes", href: "/plans" },
     { label: "Contacto", href: "/contact" },
@@ -20,30 +20,30 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen flex flex-col font-sans text-foreground bg-background">
       <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <Link href="/">
-            <a className="flex items-center gap-2 group">
-              <div className="bg-primary text-white p-1.5 rounded-lg group-hover:bg-primary/90 transition-colors">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <span className="font-heading font-bold text-xl tracking-tight text-primary">Residenz</span>
-            </a>
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="bg-primary text-white p-1.5 rounded-lg group-hover:bg-primary/90 transition-colors">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <span className="font-heading font-bold text-xl tracking-tight text-primary">Residenz</span>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <a className={cn(
+              <Link 
+                key={item.href} 
+                href={item.href}
+                className={cn(
                   "text-sm font-medium transition-colors hover:text-primary",
                   location === item.href ? "text-primary font-semibold" : "text-gray-600"
-                )}>
-                  {item.label}
-                </a>
+                )}
+              >
+                {item.label}
               </Link>
             ))}
-            <Link href="/service-detail">
-              <Button size="sm" className="font-bold bg-primary hover:bg-primary/90 rounded-full px-6">
-                Empezar
+            <Link href="/detalle-servicio">
+              <Button size="sm" className="font-bold bg-primary hover:bg-primary/90 rounded-full px-6" asChild>
+                <span>Empezar</span>
               </Button>
             </Link>
           </nav>
@@ -62,17 +62,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="md:hidden absolute top-16 left-0 w-full bg-white border-b border-gray-100 p-4 shadow-lg animate-in slide-in-from-top-5">
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
-                <Link key={item.href} href={item.href}>
-                  <a 
-                    className="text-base font-medium text-gray-700 p-2 hover:bg-gray-50 rounded-md"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
+                <Link 
+                  key={item.href} 
+                  href={item.href}
+                  className="text-base font-medium text-gray-700 p-2 hover:bg-gray-50 rounded-md"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
                 </Link>
               ))}
-              <Link href="/service-detail">
-                <Button className="w-full bg-primary font-bold rounded-xl h-12">Empezar Ahora</Button>
+              <Link href="/detalle-servicio">
+                <Button className="w-full bg-primary font-bold rounded-xl h-12" asChild><span>Empezar Ahora</span></Button>
               </Link>
             </nav>
           </div>
@@ -99,9 +99,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h4 className="font-heading font-semibold mb-4 text-secondary">Compañía</h4>
               <ul className="space-y-2 text-sm text-slate-400">
-                <li><Link href="/services"><a className="hover:text-white transition-colors">Servicios</a></Link></li>
-                <li><Link href="/about"><a className="hover:text-white transition-colors">Sobre Nosotros</a></Link></li>
-                <li><Link href="/plans"><a className="hover:text-white transition-colors">Planes y Precios</a></Link></li>
+                <li><Link href="/services" className="hover:text-white transition-colors">Servicios</Link></li>
+                <li><Link href="/about" className="hover:text-white transition-colors">Sobre Nosotros</Link></li>
+                <li><Link href="/plans" className="hover:text-white transition-colors">Planes y Precios</Link></li>
               </ul>
             </div>
 
@@ -115,9 +115,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
             <div>
               <h4 className="font-heading font-semibold mb-4 text-secondary">Atención</h4>
-              <Link href="/service-detail">
-                <Button size="sm" className="bg-secondary text-primary hover:bg-secondary/90 font-bold rounded-full w-full">
-                  Agendar Prueba
+              <Link href="/detalle-servicio">
+                <Button size="sm" className="bg-secondary text-primary hover:bg-secondary/90 font-bold rounded-full w-full" asChild>
+                  <span>Agendar Prueba</span>
                 </Button>
               </Link>
             </div>
