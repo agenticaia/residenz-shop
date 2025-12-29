@@ -330,7 +330,7 @@ export default function ServiceDetailImproved() {
                           "Limpieza profunda de refrigeradora, microondas o estufa.",
                           "Desengrase completo (interior y exterior)."
                       ]}
-                      imageUrl="/images/modern-house.png"
+                      imageUrl={getAssetUrl("/images/modern-house.png")}
                       onAdd={() => handleAddClick('mini')}
                       onViewDetails={() => handleViewDetails('appliances-cleaning')}
                     />
@@ -345,7 +345,7 @@ export default function ServiceDetailImproved() {
                           "Lavado en seco o vapor de sofás.",
                           "Eliminación de manchas y ácaros."
                       ]}
-                      imageUrl="/images/sofa-cleaning.png"
+                      imageUrl={getAssetUrl("/images/sofa-cleaning.png")}
                       onAdd={() => handleAddClick('mini')}
                       onViewDetails={() => handleViewDetails('sofa-cleaning')}
                     />
@@ -361,7 +361,7 @@ export default function ServiceDetailImproved() {
                           "Limpieza de sillas, mesas y otros muebles tapizados.",
                           "Protección de telas."
                       ]}
-                      imageUrl="/images/sofa-cleaning.png"
+                      imageUrl={getAssetUrl("/images/sofa-cleaning.png")}
                       onAdd={() => handleAddClick('mini')}
                       onViewDetails={() => handleViewDetails('furniture-cleaning')}
                     />
@@ -375,7 +375,7 @@ export default function ServiceDetailImproved() {
                           "Eliminación de telarañas y polvo en techos altos.",
                           "Limpieza de luminarias y ventiladores de techo."
                       ]}
-                      imageUrl="/images/hero-clean.png"
+                      imageUrl={getAssetUrl("/images/hero-clean.png")}
                       onAdd={() => handleAddClick('mini')}
                       onViewDetails={() => handleViewDetails('ceiling-cleaning')}
                     />
