@@ -158,8 +158,8 @@ export default function ServicesPage() {
 
                 {/* MODAL LIMPIEZA Y CONTROL - Only renders for cleaning category */}
                 {category.id === "cleaning" && (
-                  <DialogContent className="max-w-[600px] p-0 gap-0 bg-white rounded-[16px] overflow-hidden border-0 shadow-2xl">
-                    <div className="p-8">
+                  <DialogContent className="max-w-[600px] p-0 gap-0 bg-white rounded-[16px] overflow-hidden border-0 shadow-2xl max-h-[90vh] flex flex-col">
+                    <div className="p-6 sm:p-8 overflow-y-auto">
                       {/* Modal Header */}
                       <div className="flex items-center justify-between mb-8">
                         <h3 className="text-[24px] font-bold text-[#1a1a1a]">Limpieza</h3>
@@ -192,7 +192,7 @@ export default function ServicesPage() {
                     </div>
                     
                     {/* Modal Footer/Banner (Optional addition for visual flair) */}
-                    <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-4 text-center border-t border-primary/10">
+                    <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-4 text-center border-t border-primary/10 shrink-0">
                       <p className="text-xs font-medium text-primary">Garantía de satisfacción del 100% en todos los servicios</p>
                     </div>
                   </DialogContent>

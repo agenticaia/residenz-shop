@@ -446,7 +446,7 @@ export default function ServiceDetailImproved() {
             if (!open) setShowIncluded(false); // Reset on close
             setIsOpen(open);
         }}>
-          <DialogContent className="w-full sm:max-w-md p-0 overflow-hidden rounded-t-3xl sm:rounded-3xl gap-0 border-0 shadow-2xl fixed bottom-0 sm:bottom-auto sm:relative translate-y-0 sm:translate-y-0 top-auto sm:top-1/2 left-0 sm:left-1/2 right-0 sm:right-auto sm:-translate-x-1/2 sm:-translate-y-1/2 h-[85vh] sm:h-auto">
+          <DialogContent className="w-full sm:max-w-md p-0 overflow-hidden rounded-t-3xl sm:rounded-3xl gap-0 border-0 shadow-2xl fixed bottom-0 sm:bottom-auto translate-x-0 translate-y-0 top-auto left-0 right-0 sm:top-1/2 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:-translate-y-1/2 max-h-[85vh] h-auto sm:h-auto">
             {showIncluded ? (
               // "What's included" View
               <div className="bg-white animate-in slide-in-from-right-10 duration-300">
@@ -728,7 +728,7 @@ export default function ServiceDetailImproved() {
 
         {/* Details Modal */}
         <Dialog open={showDetailsModal} onOpenChange={setShowDetailsModal}>
-          <DialogContent className="w-full sm:max-w-md p-0 overflow-hidden rounded-t-3xl sm:rounded-3xl gap-0 border-0 shadow-2xl h-[90vh] sm:h-[85vh] flex flex-col fixed bottom-0 sm:bottom-auto sm:relative translate-y-0 sm:translate-y-0 top-auto sm:top-1/2 left-0 sm:left-1/2 right-0 sm:right-auto sm:-translate-x-1/2 sm:-translate-y-1/2">
+          <DialogContent className="w-full sm:max-w-md p-0 overflow-hidden rounded-t-3xl sm:rounded-3xl gap-0 border-0 shadow-2xl max-h-[90vh] h-auto sm:h-[85vh] flex flex-col fixed bottom-0 sm:bottom-auto translate-x-0 translate-y-0 top-auto left-0 right-0 sm:top-1/2 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:-translate-y-1/2">
             <div className="bg-white h-full flex flex-col min-h-0">
                  <div className="p-6 border-b border-slate-100 flex items-start justify-between sticky top-0 bg-white z-10 shrink-0">
                     <div>
@@ -750,7 +750,7 @@ export default function ServiceDetailImproved() {
                         <div className="flex justify-between items-center">
                             <h3 className="text-xl font-bold text-slate-900">¿Qué incluye?</h3>
                         </div>
-                        <div className="grid grid-cols-2 md:grid-cols-2 gap-x-4 gap-y-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-8">
                             {currentService.included.map((item, i) => (
                                 <div key={i} className="flex flex-col gap-3 group">
                                     <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 relative shadow-sm group-hover:shadow-md transition-all">
@@ -802,7 +802,7 @@ export default function ServiceDetailImproved() {
                     {/* Section 4: What we will need from you */}
                     <div className="space-y-6">
                         <h3 className="text-2xl font-bold text-slate-900">Lo que necesitaremos de ti</h3>
-                        <div className="grid grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             {[
                                 { title: "Cubeta y agua", icon: PaintBucket },
                                 { title: "Toma de corriente", icon: Zap },

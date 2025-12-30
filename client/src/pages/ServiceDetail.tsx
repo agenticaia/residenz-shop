@@ -272,7 +272,7 @@ export default function ServiceDetail() {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="max-w-2xl p-0 overflow-hidden rounded-[2.5rem] gap-0 border-0 bg-white shadow-2xl">
           <div className="max-h-[90vh] overflow-y-auto custom-scrollbar">
-            <div className="p-8 pb-4">
+            <div className="p-6 sm:p-8 pb-4">
               <DialogHeader className="mb-10">
                 <DialogTitle className="text-3xl font-heading font-bold text-primary">Configura tu Experiencia</DialogTitle>
                 <p className="text-slate-500 text-sm italic">Establece los estándares para tu hogar.</p>

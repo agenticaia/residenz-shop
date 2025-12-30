@@ -62,6 +62,11 @@ app.use((req, res, next) => {
 (async () => {
   await registerRoutes(httpServer, app);
 
+  // Redirect root to base path
+  app.get("/", (_req, res) => {
+    res.redirect("/residenz-shop/");
+  });
+
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
