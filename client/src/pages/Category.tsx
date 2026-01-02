@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -202,7 +202,7 @@ export default function CategoryPage() {
                     <div className="">
                       {/* Modal Header */}
                       <div className="flex items-center justify-between mb-8">
-                        <h3 className="text-[24px] font-bold text-[#1a1a1a]">Limpieza</h3>
+                        <DialogTitle className="text-[24px] font-bold text-[#1a1a1a]">Limpieza</DialogTitle>
                         {/* Close button is handled by DialogClose */}
                       </div>
 

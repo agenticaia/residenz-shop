@@ -732,9 +732,9 @@ export default function ServiceDetailImproved() {
             <div className="bg-white h-full flex flex-col min-h-0">
                  <div className="p-6 border-b border-slate-100 flex items-start justify-between sticky top-0 bg-white z-10 shrink-0">
                     <div>
-                         <h2 className="text-xl font-bold text-slate-900 mb-1">
+                         <DialogTitle className="text-xl font-bold text-slate-900 mb-1">
                             {currentService.title}
-                         </h2>
+                         </DialogTitle>
                          <p className="text-sm text-slate-500 font-medium">
                             A partir de S/ {currentService.price} • {currentService.duration} aprox.
                          </p>

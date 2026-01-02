@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
 import { getAssetUrl } from "@/lib/utils";
@@ -162,7 +162,7 @@ export default function ServicesPage() {
                     <div className="p-6 sm:p-8 overflow-y-auto">
                       {/* Modal Header */}
                       <div className="flex items-center justify-between mb-8">
-                        <h3 className="text-[24px] font-bold text-[#1a1a1a]">Limpieza</h3>
+                        <DialogTitle className="text-[24px] font-bold text-[#1a1a1a]">Limpieza</DialogTitle>
                         {/* Close button is handled by DialogClose or default X, but we can customize if needed */}
                       </div>
 

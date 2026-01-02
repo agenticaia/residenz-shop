@@ -85,7 +85,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-4 uppercase tracking-tighter italic">
-              ¿CANSADO DE LA RULETA RUSA DE LA LIMPIEZA?
+              ¿Por qué es tan difícil encontrar ayuda confiable?
             </h2>
             <div className="w-24 h-1 bg-secondary mx-auto"></div>
           </div>
@@ -95,13 +95,13 @@ export default function HomePage() {
             <div className="p-10 lg:p-16 bg-slate-50 border-r border-slate-100">
               <h3 className="text-2xl font-heading font-bold text-slate-400 mb-10 flex items-center gap-3">
                 <XCircle className="w-8 h-8" />
-                LA RULETA RUSA ACTUAL
+                EL PROBLEMA ACTUAL
               </h3>
               <ul className="space-y-8">
                 <ProblemItem text="Personal rota sin aviso." />
                 <ProblemItem text='"Enséñame dónde está todo" cada vez.' />
                 <ProblemItem text="Si rompen algo, tú asumes el costo." />
-                <ProblemItem text="Calidad impredecible y artesanal." />
+                <ProblemItem text="Supervisión constante y agotadora" />
               </ul>
               <div className="mt-12">
                 <Link href="/detalle-servicio">
@@ -161,8 +161,8 @@ export default function HomePage() {
 
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-16 tracking-tight">
-            NO ES SOLO LIMPIEZA. <br/>
-            <span className="text-secondary">ES TU ESCUDO DE TRANQUILIDAD.</span>
+            TU HOGAR EN LAS MEJORES MANOS, <br/>
+            <span className="text-secondary">GARANTIZADO.</span>
           </h2>
 
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -226,13 +226,13 @@ export default function HomePage() {
             
             <div className="grid md:grid-cols-2 gap-12 relative z-10">
               <Testimonial 
-                name="Brian C." 
+                name="Juan C." 
                 location="Surco" 
                 text="Lo que me convenció fue el seguro. Saber que si pasa algo, ellos responden, me da paz." 
                 image={getAssetUrl("/images/staff-maria.png")}
               />
               <Testimonial 
-                name="Janina S." 
+                name="María S." 
                 location="Miraflores" 
                 text="Odiaba repetir instrucciones. Ahora llegan y saben exactamente qué hacer. Es magia." 
                 image={getAssetUrl("/images/staff-maria.png")}
