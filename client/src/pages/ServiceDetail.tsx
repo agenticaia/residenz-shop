@@ -100,7 +100,7 @@ export default function ServiceDetail() {
                 </div>
                 <Button 
                   onClick={() => setIsOpen(true)}
-                  className="bg-primary hover:bg-primary/90 rounded-xl px-8 h-12 text-base font-bold shadow-lg shadow-primary/20"
+                  className="bg-primary hover:bg-primary/90 px-8 h-12 text-base font-bold shadow-lg shadow-primary/20"
                 >
                   Ver Servicios
                 </Button>
@@ -124,7 +124,7 @@ export default function ServiceDetail() {
                 <h2 className="text-2xl font-heading font-bold text-primary mb-8">Selecciona tu limpieza</h2>
                 
                 {/* Reactive Service Card */}
-                <Card className="p-6 border-slate-100 shadow-md hover:shadow-lg transition-all duration-300">
+                <Card className="premium-card hover:shadow-lg transition-all duration-300">
                   <div className="flex justify-between items-start mb-6">
                     <div className="space-y-1">
                       <h3 className="text-lg font-bold text-primary">Paquete de Limpieza Mensual</h3>
@@ -174,7 +174,7 @@ export default function ServiceDetail() {
                       <Button 
                         onClick={handleAddClick}
                         variant="outline" 
-                        className="border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-xl h-10 px-8 transition-all duration-300"
+                        className="border-primary text-primary hover:bg-primary hover:text-white font-bold h-10 px-8 transition-all duration-300"
                       >
                         Añadir
                       </Button>
@@ -218,7 +218,7 @@ export default function ServiceDetail() {
                     
                     <Button 
                       onClick={() => setLocation("/checkout")}
-                      className="w-full h-14 bg-primary hover:bg-primary/90 rounded-xl font-bold flex justify-between px-6 shadow-xl shadow-primary/20 transition-all active:scale-[0.98]"
+                      className="w-full h-14 bg-primary hover:bg-primary/90 font-bold flex justify-between px-6 shadow-xl shadow-primary/20 transition-all active:scale-[0.98]"
                     >
                       <div className="text-left leading-tight">
                          <div className="text-xs opacity-70 font-normal">S/{calculatePrice()}</div>
@@ -252,7 +252,7 @@ export default function ServiceDetail() {
               </Card>
 
               {/* Trust Card */}
-              <Card className="p-6 border-slate-100 shadow-sm space-y-4 bg-slate-50/30">
+              <Card className="premium-card space-y-4">
                 <div className="flex justify-between items-center">
                   <h3 className="font-heading font-bold text-primary text-sm uppercase tracking-wider">Compromiso Residenz</h3>
                   <ShieldCheck className="w-5 h-5 text-primary opacity-40" />
@@ -458,7 +458,7 @@ export default function ServiceDetail() {
               </div>
               <Button 
                 size="lg" 
-                className="rounded-2xl px-14 h-16 bg-primary hover:bg-primary/95 text-white font-bold text-xl shadow-2xl shadow-primary/20 transition-all hover:-translate-y-1 active:scale-95" 
+                className="btn-residenz-secondary" 
                 onClick={handleConfirm}
               >
                 Añadir al Carrito

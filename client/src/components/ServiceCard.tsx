@@ -62,7 +62,7 @@ export function ServiceCard({
 
         <Button 
           variant="link" 
-          className="p-0 h-auto text-primary font-bold text-sm mt-2 hover:no-underline"
+          className="btn-residenz-text mt-2"
           onClick={onViewDetails}
         >
           Ver detalles
@@ -85,7 +85,7 @@ export function ServiceCard({
         <div className="absolute -bottom-4 left-1/2 -translate-x-1/2">
           <Button 
             onClick={onAdd}
-            className="bg-white text-primary border border-slate-100 hover:bg-slate-50 shadow-md rounded-lg px-8 font-bold text-sm h-9 uppercase tracking-wide hover:scale-105 transition-transform"
+            className="btn-residenz-card uppercase tracking-wide"
           >
             Añadir
           </Button>

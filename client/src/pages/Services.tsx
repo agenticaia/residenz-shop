@@ -120,7 +120,7 @@ export default function ServicesPage() {
               Expertos verificados, precios transparentes y garantía de satisfacción total en cada servicio.
             </p>
             <Link href="/detalle-servicio">
-              <Button className="h-12 px-8 rounded-full bg-white text-black hover:bg-white/90 font-bold text-sm shadow-xl transition-transform hover:scale-105">
+              <Button className="h-12 px-8 bg-white text-black hover:bg-white/90 font-bold text-sm shadow-xl transition-transform hover:scale-105">
                 Explorar Servicios
               </Button>
             </Link>
