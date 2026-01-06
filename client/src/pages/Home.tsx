@@ -48,13 +48,13 @@ export default function HomePage() {
             </p>
             
             <div className="flex flex-col items-center gap-4">
-              <Link href="/plans">
-                <Button size="lg" className="btn-residenz-primary group">
+              <Link href="/detalle-servicio">
+                <Button size="lg" className="h-16 px-10 text-xl font-bold bg-primary hover:bg-primary/90 shadow-2xl shadow-primary/40 rounded-full group">
                   QUIERO MI PRIMERA VISITA BLINDADA
                   <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <p className="mt-[24px] mb-[16px] text-[#00BDD6] font-semibold tracking-wide">
+              <p className="text-secondary font-medium tracking-wide">
                 Prueba de fuego por solo S/49
               </p>
             </div>
@@ -104,8 +104,8 @@ export default function HomePage() {
                 <ProblemItem text="Supervisión constante y agotadora" />
               </ul>
               <div className="mt-12">
-                <Link href="/plans">
-                  <Button variant="outline" className="w-full h-14 border-primary text-primary hover:bg-primary/5 font-bold">
+                <Link href="/detalle-servicio">
+                  <Button variant="outline" className="w-full h-14 border-primary text-primary hover:bg-primary/5 font-bold rounded-xl">
                     Quiero mi primera visita blindada
                   </Button>
                 </Link>
@@ -128,8 +128,8 @@ export default function HomePage() {
                 <SolutionItem text="Estándar Hotelero garantizado." />
               </ul>
               <div className="mt-12">
-                <Link href="/plans">
-                  <Button className="w-full h-14 bg-secondary text-primary hover:bg-secondary/90 font-bold">
+                <Link href="/detalle-servicio">
+                  <Button className="w-full h-14 bg-secondary text-primary hover:bg-secondary/90 font-bold rounded-xl">
                     Agendar con Garantía
                   </Button>
                 </Link>
@@ -180,7 +180,7 @@ export default function HomePage() {
               <p className="text-lg text-slate-300 font-light leading-relaxed">
                 Olvídate de la responsabilidad civil o laboral. Nosotros asumimos el riesgo por ti. Si tu Resi se accidenta o algo se daña, nuestra póliza responde en 24 horas.
               </p>
-              <Link href="/plans">
+              <Link href="/detalle-servicio">
                 <Button className="bg-secondary text-primary hover:bg-secondary/90 px-8 h-12 rounded-full font-bold uppercase tracking-wider text-xs">
                   Quiero mi primera visita blindada
                 </Button>
@@ -245,8 +245,8 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary leading-tight">
               ¿LISTO PARA DEJAR DE PREOCUPARTE POR TU HOGAR?
             </h2>
-              <div className="space-y-4">
-              <Link href="/plans">
+            <div className="space-y-4">
+              <Link href="/detalle-servicio">
                 <Button size="lg" className="h-20 px-12 text-2xl font-bold bg-primary hover:bg-primary/90 shadow-2xl rounded-2xl w-full md:w-auto uppercase italic tracking-tighter">
                   AGENDAR MI PRUEBA CON GARANTÍA
                 </Button>
@@ -254,28 +254,11 @@ export default function HomePage() {
               <p className="text-slate-500 font-medium">
                 Garantía de satisfacción o devolvemos tu dinero
               </p>
-              </div>
+            </div>
           </div>
         </div>
       </section>
-      
-      <a
-        href="https://wa.me/?text=Hola%20Residenz%20soporte"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Contactar a soporte por WhatsApp"
-        className="whatsapp-fab"
-      >
-        <svg
-          width="28"
-          height="28"
-          viewBox="0 0 32 32"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ fill: "var(--color-accent)" }}
-        >
-          <path d="M19.11 17.42c-.29-.16-1.67-.82-1.93-.91-.26-.1-.45-.16-.64.13-.19.29-.74.91-.91 1.09-.17.19-.34.21-.63.08-.29-.13-1.22-.45-2.33-1.43-.86-.76-1.44-1.7-1.61-1.99-.17-.29-.02-.45.12-.59.12-.12.29-.32.43-.48.15-.16.19-.27.29-.46.1-.19.05-.35-.03-.48-.08-.13-.64-1.55-.88-2.12-.23-.56-.47-.49-.64-.5-.17-.01-.35-.01-.54-.01-.19 0-.48.07-.74.35-.26.29-1 1-1 2.43 0 1.43 1.03 2.81 1.18 3 .15.19 2.03 3.1 5.01 4.22.7.3 1.24.48 1.66.62.7.22 1.34.19 1.85.12.56-.08 1.67-.68 1.91-1.34.24-.66.24-1.22.17-1.34-.07-.12-.26-.2-.55-.36zM16 3C9.37 3 4 8.37 4 15c0 2.38.75 4.59 2.03 6.41L4 29l7.71-2c1.74.96 3.73 1.52 5.86 1.52 6.63 0 12-5.37 12-12S22.63 3 16 3zm0 22.67c-1.96 0-3.78-.58-5.3-1.58l-.38-.25-4.57 1.18 1.22-4.45-.26-.41c-1.19-1.72-1.9-3.79-1.9-6.02 0-5.86 4.76-10.62 10.62-10.62S26.62 9.14 26.62 15s-4.76 10.67-10.62 10.67z"/>
-        </svg>
-      </a>
     </Layout>
   );
 }
+

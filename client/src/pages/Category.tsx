@@ -161,7 +161,7 @@ export default function CategoryPage() {
             <p className="text-white/90 text-[14px] md:text-[18px] font-medium max-w-md leading-relaxed mb-8">
               Expertos verificados, precios transparentes y garantía de satisfacción total en cada servicio.
             </p>
-            <Button className="h-12 px-8 bg-white text-black hover:bg-white/90 font-bold text-sm shadow-xl transition-transform hover:scale-105">
+            <Button className="h-12 px-8 rounded-full bg-white text-black hover:bg-white/90 font-bold text-sm shadow-xl transition-transform hover:scale-105">
               Explorar Servicios
             </Button>
           </div>

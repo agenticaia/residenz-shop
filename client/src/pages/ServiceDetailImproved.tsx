@@ -418,7 +418,7 @@ export default function ServiceDetailImproved() {
                      </div>
 
                      {/* Promise */}
-                     <div className="premium-card space-y-4">
+                     <div className="p-6 border rounded-2xl border-slate-100 bg-white shadow-sm space-y-4">
                         <h4 className="font-bold text-sm text-slate-900">La Promesa Residenz</h4>
                         <ul className="space-y-3">
                             <li className="flex items-center gap-2 text-xs text-slate-600">
@@ -452,10 +452,10 @@ export default function ServiceDetailImproved() {
               <div className="bg-white animate-in slide-in-from-right-10 duration-300">
                  <div className="p-6 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white z-10">
                     <div>
-                         <DialogTitle className="text-xl font-bold text-slate-900">¿Qué incluye?</DialogTitle>
+                         <h2 className="text-xl font-bold text-slate-900">¿Qué incluye?</h2>
                          <p className="text-sm text-slate-500">Además de sala y cocina</p>
                     </div>
-                     <Button variant="ghost" size="icon" onClick={toggleIncludedView} className="rounded-[var(--button-radius)] hover:bg-slate-100">
+                     <Button variant="ghost" size="icon" onClick={toggleIncludedView} className="rounded-full hover:bg-slate-100">
                         <X className="w-5 h-5" />
                     </Button>
                  </div>
@@ -485,7 +485,7 @@ export default function ServiceDetailImproved() {
                     </div>
                  </div>
                   <div className="p-4 border-t border-slate-100 bg-slate-50">
-                        <Button onClick={toggleIncludedView} variant="outline" className="w-full font-bold h-12 border-slate-300 hover:bg-white hover:text-primary">
+                        <Button onClick={toggleIncludedView} variant="outline" className="w-full font-bold rounded-xl h-12 border-slate-300 hover:bg-white hover:text-primary">
                             Volver
                         </Button>
                   </div>
@@ -501,9 +501,9 @@ export default function ServiceDetailImproved() {
                             </Button>
                         )}
                         <div>
-                            <DialogTitle className="text-xl font-bold text-slate-900">
+                            <h2 className="text-xl font-bold text-slate-900">
                                 {flowType === 'house' ? 'Configura tu servicio' : 'Selecciona áreas'}
-                            </DialogTitle>
+                            </h2>
                             <p className="text-xs text-slate-500">Paso {wizardStep} de {flowType === 'house' ? 4 : 2}</p>
                         </div>
                     </div>
@@ -515,13 +515,13 @@ export default function ServiceDetailImproved() {
                                     <div className="space-y-6 animate-in fade-in slide-in-from-right-4">
                                         <div className="space-y-4">
                                             <h3 className="text-lg font-bold">Selecciona el tamaño</h3>
-                                            <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide px-6 snap-x snap-mandatory overscroll-x-contain horizontal-scroll-smooth">
+                                            <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide -mx-6 px-6">
                                                 {serviceOptions.map((option) => (
                                                     <button
                                                         key={option.size}
                                                         onClick={() => setSelectedSize(option)}
                                                         className={cn(
-                                                            "flex-shrink-0 min-w-[120px] p-3 rounded-xl border-2 text-left transition-all snap-start md:snap-center",
+                                                            "flex-shrink-0 min-w-[120px] p-3 rounded-xl border-2 text-left transition-all",
                                                             selectedSize.size === option.size 
                                                                 ? "border-primary bg-slate-50 shadow-sm ring-1 ring-primary/10" 
                                                                 : "border-slate-100 hover:border-slate-200"
@@ -539,25 +539,25 @@ export default function ServiceDetailImproved() {
                                     </div>
                                 )}
                                 {wizardStep === 2 && (
-                                        <div className="space-y-6 animate-in fade-in slide-in-from-right-4">
-                                            <h3 className="text-lg font-bold">Seleccione días por semana</h3>
-                                            <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide px-6 snap-x snap-mandatory overscroll-x-contain horizontal-scroll-smooth">
-                                                {[
-                                                    { label: "Una vez por semana", discount: 1 },
-                                                    { label: "2 veces por semana", discount: 0.95 },
-                                                    { label: "3 veces por semana", discount: 0.90 },
-                                                    { label: "6 veces a la semana", discount: 0.85 }
-                                                ].map((option) => (
-                                                    <button
-                                                        key={option.label}
-                                                        onClick={() => setSelectedFrequency(option.label)}
-                                                        className={cn(
-                                                            "flex-shrink-0 min-w-[140px] p-3 rounded-xl border-2 text-left transition-all snap-start",
-                                                            selectedFrequency === option.label
-                                                                ? "border-primary bg-slate-50 shadow-sm ring-1 ring-primary/10"
-                                                                : "border-slate-100 hover:border-slate-200"
-                                                        )}
-                                                    >
+                                    <div className="space-y-6 animate-in fade-in slide-in-from-right-4">
+                                        <h3 className="text-lg font-bold">Seleccione días por semana</h3>
+                                        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide -mx-6 px-6">
+                                            {[
+                                                { label: "Una vez por semana", discount: 1 },
+                                                { label: "2 veces por semana", discount: 0.95 },
+                                                { label: "3 veces por semana", discount: 0.90 },
+                                                { label: "6 veces a la semana", discount: 0.85 }
+                                            ].map((option) => (
+                                                <button
+                                                    key={option.label}
+                                                    onClick={() => setSelectedFrequency(option.label)}
+                                                    className={cn(
+                                                        "flex-shrink-0 min-w-[140px] p-3 rounded-xl border-2 text-left transition-all",
+                                                        selectedFrequency === option.label
+                                                            ? "border-primary bg-slate-50 shadow-sm ring-1 ring-primary/10"
+                                                            : "border-slate-100 hover:border-slate-200"
+                                                    )}
+                                                >
                                                     <div className={cn("font-bold text-sm mb-2", selectedFrequency === option.label ? "text-primary" : "text-slate-900")}>
                                                         {option.label}
                                                     </div>
@@ -570,14 +570,14 @@ export default function ServiceDetailImproved() {
                                     </div>
                                 )}
                                 {wizardStep === 3 && (
-                                        <div className="space-y-6 animate-in fade-in slide-in-from-right-4">
-                                            <h3 className="text-lg font-bold">Seleccione la duración del plan</h3>
-                                            <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide px-6 snap-x snap-mandatory overscroll-x-contain horizontal-scroll-smooth">
-                                                {["4 semanas", "12 semanas", "24 semanas"].map((dur) => {
-                                                    const weeks = parseInt(dur);
-                                                    const freqMap: Record<string, { count: number, discount: number }> = {
-                                                        "Una vez por semana": { count: 1, discount: 1 },
-                                                        "2 veces por semana": { count: 2, discount: 0.95 },
+                                    <div className="space-y-6 animate-in fade-in slide-in-from-right-4">
+                                        <h3 className="text-lg font-bold">Seleccione la duración del plan</h3>
+                                        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide -mx-6 px-6">
+                                            {["4 semanas", "12 semanas", "24 semanas"].map((dur) => {
+                                                const weeks = parseInt(dur);
+                                                const freqMap: Record<string, { count: number, discount: number }> = {
+                                                    "Una vez por semana": { count: 1, discount: 1 },
+                                                    "2 veces por semana": { count: 2, discount: 0.95 },
                                                     "3 veces por semana": { count: 3, discount: 0.90 },
                                                     "6 veces a la semana": { count: 6, discount: 0.85 }
                                                 };
@@ -592,7 +592,7 @@ export default function ServiceDetailImproved() {
                                                         key={dur}
                                                         onClick={() => setSelectedDuration(dur)}
                                                         className={cn(
-                                                            "flex-shrink-0 min-w-[140px] p-4 rounded-xl border-2 text-left transition-all flex flex-col justify-between snap-start",
+                                                            "flex-shrink-0 min-w-[140px] p-4 rounded-xl border-2 text-left transition-all flex flex-col justify-between",
                                                             selectedDuration === dur
                                                                 ? "border-primary bg-slate-50 shadow-sm ring-1 ring-primary/10"
                                                                 : "border-slate-100 hover:border-slate-200"
@@ -661,9 +661,9 @@ export default function ServiceDetailImproved() {
                                                 <div key={area} className="flex items-center justify-between p-3 border rounded-xl">
                                                     <span className="font-medium text-slate-900">{area}</span>
                                                     <div className="flex items-center gap-3">
-                                                        <Button variant="outline" size="icon" className="h-8 w-8 rounded-[var(--button-radius)]"><Minus className="w-3 h-3" /></Button>
+                                                        <Button variant="outline" size="icon" className="h-8 w-8 rounded-full"><Minus className="w-3 h-3" /></Button>
                                                         <span className="w-4 text-center font-bold">0</span>
-                                                        <Button variant="outline" size="icon" className="h-8 w-8 rounded-[var(--button-radius)]"><Plus className="w-3 h-3" /></Button>
+                                                        <Button variant="outline" size="icon" className="h-8 w-8 rounded-full"><Plus className="w-3 h-3" /></Button>
                                                     </div>
                                                 </div>
                                             ))}
@@ -713,10 +713,10 @@ export default function ServiceDetailImproved() {
                     </div>
 
                     {/* Footer Actions */}
-                    <div className="px-6 py-4 border-t border-slate-100 bg-white shadow-[0_-5px_10px_rgba(0,0,0,0.02)]">
+                    <div className="p-4 border-t border-slate-100 bg-white shadow-[0_-5px_10px_rgba(0,0,0,0.02)]">
                         <Button 
                             onClick={((flowType === 'house' && wizardStep < 4) || ((flowType === 'room' || flowType === 'mini') && wizardStep < 2)) ? handleNextStep : handleAddToCart}
-                            className="btn-residenz-primary w-full"
+                            className="w-full bg-primary hover:bg-primary/90 text-white font-bold h-12 rounded-xl text-base shadow-lg shadow-primary/20 transition-all hover:scale-[1.02]"
                         >
                             {((flowType === 'house' && wizardStep < 4) || ((flowType === 'room' || flowType === 'mini') && wizardStep < 2)) ? 'Siguiente' : 'Añadir al Carrito'}
                         </Button>
@@ -739,7 +739,7 @@ export default function ServiceDetailImproved() {
                             A partir de S/ {currentService.price} • {currentService.duration} aprox.
                          </p>
                     </div>
-                     <Button variant="ghost" size="icon" onClick={() => setShowDetailsModal(false)} className="rounded-[var(--button-radius)] hover:bg-slate-100 -mt-2 -mr-2">
+                     <Button variant="ghost" size="icon" onClick={() => setShowDetailsModal(false)} className="rounded-full hover:bg-slate-100 -mt-2 -mr-2">
                         <X className="w-5 h-5" />
                     </Button>
                  </div>

@@ -34,7 +34,7 @@ export function StepItem({ icon: Icon, title, desc }: { icon: LucideIcon, title:
 
 export function Testimonial({ name, location, text, image }: { name: string, location: string, text: string, image: string }) {
   return (
-    <Card className="p-8 border border-slate-100 bg-white shadow-[0px_4px_12px_rgba(0,0,0,0.05)] rounded-xl hover:scale-[1.02] transition-transform duration-500">
+    <Card className="p-8 border-0 bg-white shadow-xl rounded-[2rem] hover:scale-[1.02] transition-transform duration-500">
       <div className="flex items-center gap-4 mb-6">
         <img src={image} alt={name} className="w-14 h-14 rounded-full object-cover ring-2 ring-secondary/20" />
         <div>

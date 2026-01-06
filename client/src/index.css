@@ -115,19 +115,13 @@
   }
 
   /* Mobile Scrollbar Hide */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Smooth horizontal scroll utility */
-.horizontal-scroll-smooth {
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 /* Base Mobile Optimizations */
@@ -135,120 +129,4 @@ html {
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
-}
-
-/* Residenz Button Styles */
-:root {
-  --color-primary: #6668F2;
-  --color-accent: #00BDD6;
-  --color-text-main: #4A5566;
-  --color-white: #FFFFFF;
-  --button-radius: 12px;
-  --card-border: #E5E7EB;
-  --card-shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
-  --space-s: 16px;
-  --space-m: 24px;
-  --space-l: 32px;
-}
-
-/* Premium Card */
-.premium-card {
-  background-color: var(--color-white);
-  border: 1px solid var(--card-border);
-  border-radius: var(--button-radius);
-  box-shadow: var(--card-shadow-soft);
-  padding: var(--space-l);
-}
-.premium-card h3 {
-  color: var(--color-text-main);
-  font-weight: 700;
-}
-.premium-card p {
-  line-height: 1.6;
-}
-
-.btn-residenz-primary {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  font-weight: 700;
-  font-size: 16px;
-  height: 56px;
-  padding: 0 var(--space-l);
-  border-radius: var(--button-radius);
-  border: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 14px rgba(102, 104, 242, 0.3);
-}
-.btn-residenz-primary:hover {
-  background-color: #5557d9;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 104, 242, 0.4);
-}
-
-.btn-residenz-secondary {
-  background-color: transparent;
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
-  font-weight: 600;
-  height: 44px;
-  padding: 0 var(--space-m);
-  border-radius: var(--button-radius);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.btn-residenz-secondary:hover {
-  background-color: rgba(102, 104, 242, 0.05);
-}
-
-.btn-residenz-card {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  height: 40px;
-  padding: 0 var(--space-m);
-  border-radius: var(--button-radius);
-  font-size: 14px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.btn-residenz-text {
-  background: none;
-  border: none;
-  color: var(--color-primary);
-  font-weight: 600;
-  padding: 4px 8px;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  text-decoration: none;
-}
-.btn-residenz-text:hover {
-  text-decoration: underline;
-}
-
-.whatsapp-fab {
-  position: fixed;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #FFFFFF;
-  bottom: calc(24px + env(safe-area-inset-bottom));
-  right: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  z-index: 50;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.whatsapp-fab:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
