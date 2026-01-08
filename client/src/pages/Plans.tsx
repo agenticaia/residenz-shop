@@ -2,18 +2,26 @@ import { useState } from "react";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Check, ShieldCheck, UserCheck, Zap, Briefcase } from "lucide-react";
+import { Check, ShieldCheck, UserCheck, Zap, Briefcase, ChevronRight, Info } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "wouter";
 import { PlanConfigModal } from "@/components/plans/PlanConfigModal";
+import { ServiceDetailsModal } from "@/components/plans/ServiceDetailsModal";
 
 export default function Plans() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPlanType, setSelectedPlanType] = useState<'on-demand' | 'subscription' | 'mini'>('on-demand');
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
+  const [selectedServiceId, setSelectedServiceId] = useState<string>('default');
 
   const handlePlanSelect = (type: 'on-demand' | 'subscription' | 'mini') => {
     setSelectedPlanType(type);
     setIsModalOpen(true);
+  };
+
+  const handleViewDetails = (id: string) => {
+    setSelectedServiceId(id);
+    setIsDetailsOpen(true);
   };
 
   return (
@@ -22,6 +30,11 @@ export default function Plans() {
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         planType={selectedPlanType} 
+      />
+      <ServiceDetailsModal 
+        isOpen={isDetailsOpen} 
+        onClose={() => setIsDetailsOpen(false)} 
+        serviceId={selectedServiceId} 
       />
       <div className="bg-slate-50 py-12 md:py-16">
         <div className="container mx-auto px-4">
@@ -65,6 +78,12 @@ export default function Plans() {
                 >
                   Agendar Una Vez
                 </Button>
+                <button 
+                  onClick={() => handleViewDetails('furnished-apt')}
+                  className="w-full mt-4 flex items-center justify-center gap-1 text-sm font-medium text-[#6668F2] hover:underline"
+                >
+                  Ver detalles <ChevronRight className="w-4 h-4" />
+                </button>
               </div>
             </Card>
 
@@ -101,6 +120,12 @@ export default function Plans() {
                 >
                   Quiero mi primera visita blindada
                 </Button>
+                <button 
+                  onClick={() => handleViewDetails('furnished-apt')}
+                  className="w-full mt-4 flex items-center justify-center gap-1 text-sm font-medium text-[#6668F2] hover:underline"
+                >
+                  Ver detalles <ChevronRight className="w-4 h-4" />
+                </button>
                 <p className="text-center text-xs text-slate-400 mt-4">Garantía de satisfacción el primer mes</p>
               </div>
             </Card>
@@ -134,6 +159,12 @@ export default function Plans() {
                     Contactar Ventas
                   </Button>
                 </Link>
+                <button 
+                  onClick={() => handleViewDetails('default')}
+                  className="w-full mt-4 flex items-center justify-center gap-1 text-sm font-medium text-[#6668F2] hover:underline"
+                >
+                  Ver detalles <ChevronRight className="w-4 h-4" />
+                </button>
               </div>
             </Card>
           </div>
