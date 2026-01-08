@@ -1,13 +1,28 @@
+import { useState } from "react";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, ShieldCheck, UserCheck, Zap, Briefcase } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "wouter";
+import { PlanConfigModal } from "@/components/plans/PlanConfigModal";
 
 export default function Plans() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPlanType, setSelectedPlanType] = useState<'on-demand' | 'subscription' | 'mini'>('on-demand');
+
+  const handlePlanSelect = (type: 'on-demand' | 'subscription' | 'mini') => {
+    setSelectedPlanType(type);
+    setIsModalOpen(true);
+  };
+
   return (
     <Layout>
+      <PlanConfigModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        planType={selectedPlanType} 
+      />
       <div className="bg-slate-50 py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -44,11 +59,12 @@ export default function Plans() {
               </div>
 
               <div className="mt-auto pt-4">
-                <Link href="/detalle-servicio">
-                  <Button className="w-full bg-[#6668F2] hover:bg-[#5557D9] text-white text-base font-bold rounded-full h-[56px] py-4 px-8 shadow-md transition-all">
-                    Agendar Una Vez
-                  </Button>
-                </Link>
+                <Button 
+                  onClick={() => handlePlanSelect('on-demand')}
+                  className="w-full bg-[#6668F2] hover:bg-[#5557D9] text-white text-base font-bold rounded-full h-[56px] py-4 px-8 shadow-md transition-all"
+                >
+                  Agendar Una Vez
+                </Button>
               </div>
             </Card>
 
@@ -79,11 +95,12 @@ export default function Plans() {
               </div>
 
               <div className="mt-auto pt-4">
-                <Link href="/detalle-servicio">
-                  <Button className="w-full bg-[#6668F2] hover:bg-[#5557D9] text-white text-base font-bold rounded-full h-[56px] py-4 px-8 shadow-md transition-all">
-                    Quiero mi primera visita blindada
-                  </Button>
-                </Link>
+                <Button 
+                  onClick={() => handlePlanSelect('subscription')}
+                  className="w-full bg-[#6668F2] hover:bg-[#5557D9] text-white text-base font-bold rounded-full h-[56px] py-4 px-8 shadow-md transition-all"
+                >
+                  Quiero mi primera visita blindada
+                </Button>
                 <p className="text-center text-xs text-slate-400 mt-4">Garantía de satisfacción el primer mes</p>
               </div>
             </Card>
@@ -112,7 +129,7 @@ export default function Plans() {
               </div>
 
               <div className="mt-auto pt-4">
-                <Link href="/detalle-servicio">
+                <Link href="/contact">
                   <Button className="w-full bg-[#6668F2] hover:bg-[#5557D9] text-white text-base font-bold rounded-full h-[56px] py-4 px-8 shadow-md transition-all">
                     Contactar Ventas
                   </Button>
