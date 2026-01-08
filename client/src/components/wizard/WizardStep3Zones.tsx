@@ -87,7 +87,7 @@ export function WizardStep3Zones({
       <div className="p-6 border-t border-slate-100 bg-white shrink-0">
         <Button 
           onClick={nextStep}
-          className="w-full h-14 text-lg font-bold rounded-xl bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20"
+          className="w-full h-14 text-lg font-bold bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20"
         >
           Continuar
         </Button>

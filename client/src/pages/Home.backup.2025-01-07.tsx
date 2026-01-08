@@ -12,27 +12,13 @@ import {
   Star, 
   FileText, 
   Video, 
-  Coffee,
-  Wind,
-  Lock,
-  MessageSquare,
-  QrCode
+  Coffee 
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 
 import { ProblemItem, SolutionItem, StepItem, Testimonial } from "@/components/home/HomeComponents";
 import { getAssetUrl } from "@/lib/utils";
-
-/**
- * CHANGELOG - PIVOTE A PLANES
- * Fecha: 2025-01-07
- * Cambios realizados:
- * - Navbar: Link "Servicios" ocultado temporalmente
- * - Landing CTAs: Todos redirigen a /planes en lugar de /servicios
- * - Razón: Decisión estratégica CEO - validar propuesta de valor en Planes primero
- * - Para revertir: Descomentar código marcado con "PIVOTE"
- */
 
 export default function HomePage() {
   return (
@@ -64,10 +50,10 @@ export default function HomePage() {
             </p>
             
             <div className="flex flex-col items-center gap-4">
-              <Link href="/plans"> {/* PIVOTE: Antes /detalle-servicio */}
-                <Button size="lg" className="h-auto min-h-[56px] py-4 rounded-full px-6 text-sm md:text-xl font-bold bg-[#6668F2] hover:bg-[#5557D9] shadow-2xl shadow-[#6668F2]/40 group whitespace-normal leading-tight">
+              <Link href="/detalle-servicio">
+                <Button size="lg" className="h-16 px-10 text-xl font-bold bg-primary hover:bg-primary/90 shadow-2xl shadow-primary/40 group">
                   QUIERO MI PRIMERA VISITA BLINDADA
-                  <ArrowRight className="ml-2 w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform shrink-0" />
+                  <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <p className="text-secondary font-medium tracking-wide">
@@ -139,7 +125,7 @@ export default function HomePage() {
               
               {/* Botón */}
                <div className="mt-auto">
-                 <Link href="/plans"> {/* PIVOTE: Antes /detalle-servicio */}
+                 <Link href="/detalle-servicio">
                    <Button variant="outline" className="w-full h-12 px-6 border-2 border-[#6668F2] text-[#6668F2] rounded-xl font-semibold hover:bg-[#6668F2]/10 transition-colors">
                      Quiero mi primera visita blindada
                    </Button>
@@ -193,85 +179,16 @@ export default function HomePage() {
              </div>
           </div>
 
-          <div className="mt-16 w-full max-w-5xl mx-auto">
-            <div className="bg-white rounded-[16px] shadow-[0_0_50px_-12px_rgba(102,104,242,0.5)] overflow-hidden border border-slate-100">
-              <div className="grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
-                
-                {/* COLUMNA IZQUIERDA (Imagen) */}
-                <div className="relative h-[300px] md:h-full">
-                  <img 
-                    src={getAssetUrl("/images/amenities.png")} 
-                    alt="Experiencia Hotelera Residenz" 
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  {/* Micro-copy superpuesto */}
-                  <div className="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-md p-4 rounded-xl border border-white/10">
-                    <p className="text-white text-sm md:text-base font-medium leading-relaxed">
-                      "No es solo limpieza, es hospitalidad en cada rincón."
-                    </p>
-                  </div>
+          <div className="mt-16 flex justify-center">
+            <div className="relative group max-w-2xl w-full">
+              <div className="absolute -inset-1 bg-gradient-to-r from-secondary to-primary rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+              <Card className="relative overflow-hidden border-0 bg-white">
+                <img src={getAssetUrl("/images/amenities.png")} alt="Detalle Hotelero" className="w-full h-80 object-cover" />
+                <div className="p-6 text-center">
+                  <span className="text-sm font-bold text-primary uppercase tracking-widest">Experiencia Wow</span>
+                  <p className="text-slate-600 italic mt-2">No es solo limpieza, es hospitalidad en cada rincón.</p>
                 </div>
-
-                {/* COLUMNA DERECHA (Contenido) */}
-                <div className="p-8 md:p-12 flex flex-col justify-center bg-white">
-                  {/* Header */}
-                  <div className="mb-10">
-                    <h3 className="text-primary font-bold text-2xl uppercase tracking-tight mb-3">
-                      MEMORIA DIGITAL
-                    </h3>
-                    <p className="text-slate-500 text-sm md:text-base leading-relaxed mb-4">
-                      Guardamos tus preferencias para que la perfección se repita en cada visita, sin preguntas.
-                    </p>
-                  </div>
-
-                  {/* Fichas de Preferencia */}
-                  <div className="space-y-4 mb-10">
-                    {/* Item 1 */}
-                    <div className="flex items-center gap-4 p-4 bg-[#F1F5F9] rounded-xl border border-[#E2E8F0] group transition-all hover:border-[#6668F2]/30">
-                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 transition-colors shadow-sm">
-                        <Wind className="w-5 h-5 text-[#6668F2] transition-colors" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-slate-900 text-sm">Aroma lavanda detectado</h4>
-                        <span className="text-[10px] font-bold text-[#6668F2] uppercase tracking-wider bg-[#EEF2FF] px-2 py-0.5 rounded-full mt-1 inline-block">Sincronizado</span>
-                      </div>
-                    </div>
-
-                    {/* Item 2 */}
-                    <div className="flex items-center gap-4 p-4 bg-[#F1F5F9] rounded-xl border border-[#E2E8F0] group transition-all hover:border-[#6668F2]/30">
-                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 transition-colors shadow-sm">
-                        <Lock className="w-5 h-5 text-[#6668F2] transition-colors" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-slate-900 text-sm">Espacio oficina</h4>
-                        <span className="text-[10px] font-bold text-[#6668F2] uppercase tracking-wider bg-[#EEF2FF] px-2 py-0.5 rounded-full mt-1 inline-block">Protegido</span>
-                      </div>
-                    </div>
-
-                    {/* Item 3 */}
-                    <div className="flex items-center gap-4 p-4 bg-[#F1F5F9] rounded-xl border border-[#E2E8F0] group transition-all hover:border-[#6668F2]/30">
-                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 transition-colors shadow-sm">
-                        <Star className="w-5 h-5 text-[#6668F2] transition-colors" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-slate-900 text-sm">Doblar toalla como cilindro</h4>
-                        <span className="text-[10px] font-bold text-[#6668F2] uppercase tracking-wider bg-[#EEF2FF] px-2 py-0.5 rounded-full mt-1 inline-block">Estándar 5★</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Nota del Resi */}
-                  <div className="relative bg-slate-50 p-5 rounded-xl border border-slate-100">
-                    <div className="absolute -top-3 -left-2 rotate-[-5deg] bg-white border border-slate-200 shadow-sm p-1.5 rounded-lg">
-                        <MessageSquare className="w-4 h-4 text-[#6668F2]" />
-                    </div>
-                    <p className="text-slate-600 text-sm italic leading-relaxed pl-2">
-                      "Nota: Dejamos el spray Lavanda en el baño principal como te gusta."
-                    </p>
-                  </div>
-                </div>
-
-              </div>
+              </Card>
             </div>
           </div>
         </div>
@@ -284,91 +201,33 @@ export default function HomePage() {
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-[120px] translate-x-1/2 translate-y-1/2" />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            
-            {/* Columna Izquierda: El Seguro */}
-            <div className="space-y-8">
-              <div className="inline-flex items-center justify-center p-4 bg-[#6668F2]/10 rounded-2xl border border-[#6668F2]/20">
-                <Shield className="w-12 h-12 text-[#6668F2]" />
-              </div>
-              
-              <div className="space-y-2">
-                <h2 className="text-sm font-bold text-[#6668F2] tracking-widest uppercase">Respaldo Legal y Laboral</h2>
-                <div className="text-5xl md:text-6xl font-extrabold text-white tracking-tight">
-                  S/ 15,000
-                </div>
-              </div>
-              
-              <p className="text-lg text-slate-300 font-light leading-relaxed max-w-md">
-                Cubrimos cualquier accidente de la Resi durante el servicio. Tú tienes <span className="text-white font-medium">0% de responsabilidad</span> ni trámites legales.
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-16 tracking-tight">
+            TU HOGAR EN LAS MEJORES MANOS, <br/>
+            <span className="text-secondary">GARANTIZADO.</span>
+          </h2>
+
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10"
+            >
+              <img src={getAssetUrl("/images/warranty.png")} alt="Garantía Residenz" className="w-full h-auto" />
+            </motion.div>
+
+            <div className="text-left space-y-6">
+              <h3 className="text-2xl font-heading font-bold text-white leading-snug">
+                Incluimos un Certificado de Protección en cada visita.
+              </h3>
+              <p className="text-lg text-slate-300 font-light leading-relaxed">
+                Olvídate de la responsabilidad civil o laboral. Nosotros asumimos el riesgo por ti. Si tu Resi se accidenta o algo se daña, nuestra póliza responde en 24 horas.
               </p>
-
-              <div className="pt-4">
-                <Link href="/plans">
-                  <Button className="bg-[#6668F2] text-white hover:bg-[#5557D9] px-8 h-12 rounded-full font-bold uppercase tracking-wider text-xs">
-                    Ver Cobertura Completa
-                  </Button>
-                </Link>
-              </div>
+              <Link href="/detalle-servicio">
+                <Button className="bg-secondary text-primary hover:bg-secondary/90 px-8 h-12 rounded-full font-bold uppercase tracking-wider text-xs">
+                  Quiero mi primera visita blindada
+                </Button>
+              </Link>
             </div>
-
-            {/* Columna Derecha: Validación Humana */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-white/10 relative">
-              <div className="absolute top-0 right-0 p-6 opacity-20">
-                <QrCode className="w-32 h-32 text-white" />
-              </div>
-              
-              <div className="relative z-10 space-y-8">
-                <div className="flex items-center gap-6">
-                  <div className="relative">
-                    <div className="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-[#6668F2] to-[#EEF2FF]">
-                      <img 
-                        src={getAssetUrl("/images/staff-maria.png")} 
-                        alt="Perfil Verificado" 
-                        className="w-full h-full object-cover rounded-full border-4 border-slate-900" 
-                      />
-                    </div>
-                    <div className="absolute -bottom-2 -right-2 bg-white text-[#6668F2] p-1.5 rounded-lg shadow-lg">
-                      <QrCode className="w-5 h-5" />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <div className="inline-flex items-center gap-1.5 bg-[#6668F2] text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide mb-2">
-                      <Check className="w-3 h-3" />
-                      Identidad Verificada
-                    </div>
-                    <h3 className="text-2xl font-bold text-white leading-tight">
-                      Conoce y valida <br/> a tu Experta.
-                    </h3>
-                  </div>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                      <FileText className="w-5 h-5 text-[#6668F2]" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-bold text-sm">Conoce su historia y perfil</h4>
-                      <p className="text-slate-400 text-sm">Validamos su identidad y compartimos detalles de su experiencia profesional y personal contigo antes de la visita.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                      <QrCode className="w-5 h-5 text-[#6668F2]" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-bold text-sm">Validación QR</h4>
-                      <p className="text-slate-400 text-sm">Escanea su código al llegar para asegurar quién entra a tu hogar.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
@@ -400,7 +259,7 @@ export default function HomePage() {
           </div>
 
           {/* Testimonios */}
-          <div className="bg-slate-50 rounded-xl p-8 md:p-12 relative overflow-hidden mb-24 border border-[#E2E8F0]">
+          <div className="bg-slate-50 rounded-[3rem] p-12 md:p-20 relative overflow-hidden mb-24">
             <div className="absolute top-0 right-0 p-8 text-primary/5">
               <Star className="w-48 h-48 fill-current" />
             </div>
@@ -424,13 +283,13 @@ export default function HomePage() {
           </div>
 
           {/* Cierre */}
-          <div className="text-center max-w-3xl mx-auto space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-8">
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary leading-tight">
               ¿LISTO PARA DEJAR DE PREOCUPARTE POR TU HOGAR?
             </h2>
-            <div className="space-y-6">
-              <Link href="/plans"> {/* PIVOTE: Antes /detalle-servicio */}
-                <Button size="lg" className="h-auto min-h-[56px] py-4 px-6 text-sm md:text-xl font-bold bg-primary hover:bg-primary/90 shadow-2xl w-full md:w-auto uppercase italic tracking-tighter rounded-xl whitespace-normal leading-tight">
+            <div className="space-y-4">
+              <Link href="/detalle-servicio">
+                <Button size="lg" className="h-20 px-12 text-2xl font-bold bg-primary hover:bg-primary/90 shadow-2xl w-full md:w-auto uppercase italic tracking-tighter">
                   AGENDAR MI PRUEBA CON GARANTÍA
                 </Button>
               </Link>

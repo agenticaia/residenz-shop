@@ -54,7 +54,7 @@ export function WizardStep5Confirmation({ handleFinish }: WizardStep5Confirmatio
       <div className="p-6 bg-[#0F172A] border-t border-white/10 relative z-10 shrink-0">
         <Button 
           onClick={handleFinish}
-          className="w-full h-14 text-lg font-bold rounded-xl bg-white text-slate-900 hover:bg-slate-100 shadow-xl"
+          className="w-full h-14 text-lg font-bold bg-white text-slate-900 hover:bg-slate-100 shadow-xl"
         >
           Finalizar Configuración
         </Button>

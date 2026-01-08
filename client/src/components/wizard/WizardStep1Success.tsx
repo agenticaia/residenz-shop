@@ -13,7 +13,9 @@ interface WizardStep1SuccessProps {
 export function WizardStep1Success({ nextStep, onClose }: WizardStep1SuccessProps) {
   return (
     <motion.div 
-      {...stepVariants.step1}
+      initial={stepVariants.step1.initial}
+      animate={stepVariants.step1.animate}
+      exit={stepVariants.step1.exit}
       className="flex-1 flex flex-col bg-slate-50"
     >
       {/* Status Bar Fake */}
@@ -41,7 +43,7 @@ export function WizardStep1Success({ nextStep, onClose }: WizardStep1SuccessProp
               <span>Configuración</span>
               <span>25%</span>
             </div>
-            <Progress value={25} className="h-2 bg-slate-200" indicatorClassName="bg-primary" />
+            <Progress value={25} className="h-2 bg-slate-200" />
           </div>
 
           <Card className="w-full bg-white border-l-4 border-l-amber-500 shadow-lg p-6 text-left space-y-4 relative overflow-hidden shrink-0">
@@ -66,7 +68,7 @@ export function WizardStep1Success({ nextStep, onClose }: WizardStep1SuccessProp
       <div className="p-6 bg-white border-t border-slate-100 shrink-0">
         <Button 
           onClick={nextStep}
-          className="w-full h-14 text-lg font-bold rounded-xl bg-[#0F172A] hover:bg-[#1E293B] shadow-xl shadow-slate-900/10"
+          className="w-full h-14 text-lg font-bold bg-[#0F172A] hover:bg-[#1E293B] shadow-xl shadow-slate-900/10"
         >
           ACTIVAR MANUAL DIGITAL
         </Button>

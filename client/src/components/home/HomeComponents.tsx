@@ -23,7 +23,7 @@ export function SolutionItem({ text }: { text: string }) {
 export function StepItem({ icon: Icon, title, desc }: { icon: LucideIcon, title: string, desc: string }) {
   return (
     <div className="flex flex-col items-center text-center space-y-4 group">
-      <div className="w-20 h-20 rounded-3xl bg-slate-50 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-xl group-hover:-translate-y-2">
+      <div className="w-20 h-20 rounded-xl bg-slate-50 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-lg group-hover:-translate-y-2">
         <Icon className="w-10 h-10" />
       </div>
       <h4 className="text-xl font-heading font-bold text-primary">{title}</h4>
@@ -34,7 +34,7 @@ export function StepItem({ icon: Icon, title, desc }: { icon: LucideIcon, title:
 
 export function Testimonial({ name, location, text, image }: { name: string, location: string, text: string, image: string }) {
   return (
-    <Card className="p-8 border-0 bg-white shadow-xl rounded-[2rem] hover:scale-[1.02] transition-transform duration-500">
+    <Card className="p-8 border border-[#E2E8F0] bg-white shadow-sm rounded-xl hover:shadow-md transition-all duration-500">
       <div className="flex items-center gap-4 mb-6">
         <img src={image} alt={name} className="w-14 h-14 rounded-full object-cover ring-2 ring-secondary/20" />
         <div>

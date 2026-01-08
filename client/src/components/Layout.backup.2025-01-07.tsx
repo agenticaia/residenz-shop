@@ -4,30 +4,20 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-/**
- * CHANGELOG - PIVOTE A PLANES
- * Fecha: 2025-01-07
- * Cambios realizados:
- * - Navbar: Link "Servicios" ocultado temporalmente
- * - Landing CTAs: Todos redirigen a /planes en lugar de /servicios
- * - Razón: Decisión estratégica CEO - validar propuesta de valor en Planes primero
- * - Para revertir: Descomentar código marcado con "PIVOTE"
- */
-
 export function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
     { label: "Inicio", href: "/" },
-    // { label: "Servicios", href: "/detalle-servicio" }, /* TEMPORALMENTE OCULTO - PIVOTE A PLANES (2025-01-07) */
+    { label: "Servicios", href: "/detalle-servicio" },
     { label: "Sobre Nosotros", href: "/about" },
     { label: "Planes", href: "/plans" },
     { label: "Contacto", href: "/contact" },
   ];
 
   return (
-    <div className="min-h-screen flex flex-col font-sans text-foreground bg-background overflow-x-hidden">
+    <div className="min-h-screen flex flex-col font-sans text-foreground bg-background">
       <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
@@ -51,7 +41,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 {item.label}
               </Link>
             ))}
-            <Link href="/plans">
+            <Link href="/detalle-servicio">
               <Button className="font-bold bg-primary hover:bg-primary/90 px-6 h-9" asChild>
                 <span>Empezar</span>
               </Button>
@@ -125,19 +115,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
             <div>
               <h4 className="font-heading font-semibold mb-4 text-secondary">Atención</h4>
-              {location !== '/plans' ? (
-                <Link href="/plans"> {/* PIVOTE: Antes /detalle-servicio */}
-                  <Button size="sm" className="bg-[#00BDD6] text-white hover:bg-[#00BDD6]/90 font-bold w-full rounded-xl" asChild>
-                    <span>Agendar Prueba</span>
-                  </Button>
-                </Link>
-              ) : (
-                <Link href="/contact">
-                  <Button size="sm" className="bg-[#00BDD6] text-white hover:bg-[#00BDD6]/90 font-bold w-full rounded-xl" asChild>
-                    <span>Contáctanos</span>
-                  </Button>
-                </Link>
-              )}
+              <Link href="/detalle-servicio">
+                <Button size="sm" className="bg-secondary text-primary hover:bg-secondary/90 font-bold w-full" asChild>
+                  <span>Agendar Prueba</span>
+                </Button>
+              </Link>
             </div>
           </div>
           

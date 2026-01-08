@@ -77,7 +77,7 @@ export function AccountCard({ isLoggedIn, setIsLoggedIn, setShowWizard }: Accoun
           </h3>
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-center">
             <p className="text-sm text-slate-500 mb-4">Selecciona un método de pago para completar tu suscripción</p>
-            <Button className="w-full bg-black text-white hover:bg-slate-800 h-12 rounded-lg font-bold">
+            <Button className="w-full bg-black text-white hover:bg-slate-800 h-12 font-bold">
               Agregar Tarjeta
             </Button>
           </div>

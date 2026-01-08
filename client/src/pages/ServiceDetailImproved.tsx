@@ -455,7 +455,7 @@ export default function ServiceDetailImproved() {
                          <h2 className="text-xl font-bold text-slate-900">¿Qué incluye?</h2>
                          <p className="text-sm text-slate-500">Además de sala y cocina</p>
                     </div>
-                     <Button variant="ghost" size="icon" onClick={toggleIncludedView} className="rounded-full hover:bg-slate-100">
+                     <Button variant="ghost" size="icon" onClick={toggleIncludedView} className="hover:bg-slate-100">
                         <X className="w-5 h-5" />
                     </Button>
                  </div>
@@ -739,7 +739,7 @@ export default function ServiceDetailImproved() {
                             A partir de S/ {currentService.price} • {currentService.duration} aprox.
                          </p>
                     </div>
-                     <Button variant="ghost" size="icon" onClick={() => setShowDetailsModal(false)} className="rounded-full hover:bg-slate-100 -mt-2 -mr-2">
+                     <Button variant="ghost" size="icon" onClick={() => setShowDetailsModal(false)} className="hover:bg-slate-100 -mt-2 -mr-2">
                         <X className="w-5 h-5" />
                     </Button>
                  </div>
